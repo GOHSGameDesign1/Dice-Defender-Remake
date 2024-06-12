@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseDragging : MonoBehaviour
 {
 
-    private Transform currentlyDraggingObject;
+    private IDraggable currentlyDraggingObject;
 
     // Start is called before the first frame update
     void Start()
@@ -34,24 +34,20 @@ public class MouseDragging : MonoBehaviour
 
         if (hit)
         {
-            if(hit.transform.TryGetComponent(out IDraggable draggableObject))
+            if(hit.transform.TryGetComponent(out currentlyDraggingObject))
             {
-                currentlyDraggingObject = hit.transform;
-                draggableObject.OnClick();
+                currentlyDraggingObject.OnClick();
             }
         }
     }
 
     void StopDragging()
     {
-        if (!currentlyDraggingObject)
+        if (currentlyDraggingObject == null)
         {
             return;
         }
-
-        if(currentlyDraggingObject.TryGetComponent(out IDraggable draggableObject)){ 
-            draggableObject.OnEndClick();
-        }
+        currentlyDraggingObject.OnEndClick();
         currentlyDraggingObject = null;
 
     }
