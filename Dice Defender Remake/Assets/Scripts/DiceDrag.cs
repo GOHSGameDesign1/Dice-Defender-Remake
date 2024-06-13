@@ -5,6 +5,8 @@ using UnityEngine;
 public class DiceDrag : MonoBehaviour, IDraggable
 {
     bool gettingDragged;
+    Vector2 mousePos;
+    Vector2 dragOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -15,12 +17,14 @@ public class DiceDrag : MonoBehaviour, IDraggable
     // Update is called once per frame
     void Update()
     {
-        if(gettingDragged) transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (gettingDragged) transform.position = mousePos + dragOffset;
     }
 
     public void OnClick()
     {
         gettingDragged=true;
+        dragOffset = (Vector2)transform.position - mousePos;
     }
 
     public void OnEndClick()
