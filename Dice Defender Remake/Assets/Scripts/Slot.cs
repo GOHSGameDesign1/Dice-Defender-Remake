@@ -5,11 +5,11 @@ using UnityEngine;
 public class Slot : MonoBehaviour
 {
     public Transform currentDie { get; private set; }
+    private Collider2D trigger;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        trigger = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -29,10 +29,14 @@ public class Slot : MonoBehaviour
         currentDie = die;
 
         currentDie.position = transform.position;
+
+        trigger.enabled = false;
+        
     }
 
     public void RemoveDie()
     {
         currentDie = null;
+        trigger.enabled = true;
     }
 }
