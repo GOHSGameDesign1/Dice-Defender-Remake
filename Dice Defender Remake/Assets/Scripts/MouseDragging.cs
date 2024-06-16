@@ -7,6 +7,9 @@ public class MouseDragging : MonoBehaviour
 
     private IDraggable currentlyDraggingObject;
 
+    public delegate void OnMouseUp();
+    public static event OnMouseUp onMouseUp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +52,11 @@ public class MouseDragging : MonoBehaviour
         }
         currentlyDraggingObject.OnEndClick();
         currentlyDraggingObject = null;
+
+        if (onMouseUp != null)
+        {
+            onMouseUp.Invoke();
+        }
 
     }
 }

@@ -11,11 +11,12 @@ public class DiceDrag : MonoBehaviour, IDraggable
     private HashSet<Slot> slotsInRange = new HashSet<Slot>();
     private Slot currentSlot;
 
-    [Range(1, 6)] public int dieNumber;
+    private DieNumber dieNumber;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
+        dieNumber = GetComponent<DieNumber>();
         gettingDragged = false;
     }
 
@@ -50,13 +51,13 @@ public class DiceDrag : MonoBehaviour, IDraggable
         {
 
             currentSlot = slots[0];
-            slots[0].AddDie(transform); 
+            slots[0].AddDie(dieNumber); 
         }
 
         if(slotsInRange.Count > 1) 
         {
             currentSlot = DetermineClosest(slots);
-            currentSlot.AddDie(transform);
+            currentSlot.AddDie(dieNumber);
         }
     }
 

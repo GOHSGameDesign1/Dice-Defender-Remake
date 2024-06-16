@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    public Transform currentDie { get; private set; }
+    public DieNumber currentDie { get; private set; }
     private Collider2D trigger;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class Slot : MonoBehaviour
         
     }
 
-    public void AddDie(Transform die)
+    public void AddDie(DieNumber die)
     {
         if(currentDie != null)
         {
@@ -28,9 +28,11 @@ public class Slot : MonoBehaviour
 
         currentDie = die;
 
-        currentDie.position = transform.position;
+        currentDie.transform.position = transform.position;
 
         trigger.enabled = false;
+
+        Debug.Log("die added: " + die.getDieNumber());
         
     }
 
