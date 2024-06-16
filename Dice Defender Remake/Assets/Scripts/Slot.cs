@@ -39,4 +39,16 @@ public class Slot : MonoBehaviour
         currentDie = null;
         trigger.enabled = true;
     }
+
+    public void DestroyDie()
+    {
+        if(currentDie == null)
+        {
+            Debug.LogWarning("No Die to Destroy!");
+            return;
+        }
+
+        Destroy(currentDie.gameObject);
+        RemoveDie();
+    }
 }

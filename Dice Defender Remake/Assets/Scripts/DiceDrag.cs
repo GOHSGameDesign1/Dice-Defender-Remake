@@ -11,6 +11,8 @@ public class DiceDrag : MonoBehaviour, IDraggable
     private HashSet<Slot> slotsInRange = new HashSet<Slot>();
     private Slot currentSlot;
 
+    [Range(1, 6)] public int dieNumber;
+
     // Start is called before the first frame update
     void Start()
     {
