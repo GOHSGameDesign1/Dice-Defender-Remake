@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 240931170467752542}
   - component: {fileID: 240931170467752543}
   - component: {fileID: 240931170467752540}
+  - component: {fileID: 6508507191938748689}
   m_Layer: 0
   m_Name: Die Projectile
   m_TagString: Untagged
@@ -206,3 +207,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0}
   speed: 5
+--- !u!114 &6508507191938748689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240931170467752536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695b42f4d39ddc04191b2779ed685546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateAmount: -2
