@@ -5,9 +5,13 @@ using UnityEngine;
 public class CannonShoot : MonoBehaviour
 {
     private Slot slot;
+    private Transform cannonSprite;
+
+    public GameObject dieProj;
 
     private void Awake()
     {
+        cannonSprite = transform.GetChild(0);
         slot = transform.GetChild(1).GetComponent<Slot>();
     }
 
@@ -25,7 +29,14 @@ public class CannonShoot : MonoBehaviour
             if (slot.currentDie == null) return;
 
             Debug.Log("Shooting Die: " +  slot.currentDie.getDieNumber());
-            slot.DestroyDie();
+            ShootDie();
         }
+    }
+
+    void ShootDie()
+    {
+        GameObject proj = Instantiate(dieProj, transform.position, Quaternion.identity);
+        proj.GetComponent<ProjectileFunction>().direction = cannonSprite.right;
+        slot.DestroyDie();
     }
 }
