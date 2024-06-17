@@ -22,7 +22,6 @@ public class Adding : MonoBehaviour
 
     void AddDice()
     {
-        Debug.Log("Add Event");
         if (!SlotsAreFull()) return;
 
         DieNumber die1 = slots[0].currentDie;

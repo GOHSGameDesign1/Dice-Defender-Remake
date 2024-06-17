@@ -31,8 +31,6 @@ public class Slot : MonoBehaviour
         currentDie.transform.position = transform.position;
 
         trigger.enabled = false;
-
-        Debug.Log("die added: " + die.getDieNumber());
         
     }
 

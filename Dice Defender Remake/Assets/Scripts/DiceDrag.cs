@@ -83,7 +83,6 @@ public class DiceDrag : MonoBehaviour, IDraggable
     {
         if(collision.TryGetComponent(out Slot slot)){
             slotsInRange.Add(slot);
-            Debug.Log("added Transform. Total: " + slotsInRange.Count);
         }
     }
 

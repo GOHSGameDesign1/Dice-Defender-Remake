@@ -22,7 +22,6 @@ public class Subtracting : MonoBehaviour
 
     void MinusDice()
     {
-        Debug.Log("Add Event");
         if (!SlotsAreFull()) return;
 
         DieNumber die1 = slots[0].currentDie;
