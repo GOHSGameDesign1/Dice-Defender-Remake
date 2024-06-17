@@ -15,12 +15,6 @@ public class CannonShoot : MonoBehaviour
         slot = transform.GetChild(1).GetComponent<Slot>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -37,6 +31,7 @@ public class CannonShoot : MonoBehaviour
     {
         GameObject proj = Instantiate(dieProj, transform.position, Quaternion.identity);
         proj.GetComponent<ProjectileFunction>().direction = cannonSprite.right;
+        proj.GetComponent<DieNumber>().setDieNumber(slot.currentDie.getDieNumber());
         slot.DestroyDie();
     }
 }

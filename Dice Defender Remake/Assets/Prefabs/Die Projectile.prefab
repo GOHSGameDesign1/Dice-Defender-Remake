@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 240931170467752543}
   - component: {fileID: 240931170467752540}
   - component: {fileID: 6508507191938748689}
+  - component: {fileID: 1425647130520032029}
   m_Layer: 0
   m_Name: Die Projectile
   m_TagString: Untagged
@@ -220,3 +221,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateAmount: -2
+--- !u!114 &1425647130520032029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240931170467752536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abfece172689744391f4585a0e93fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dieNumber: 1
+  dieSprites:
+  - {fileID: 21300000, guid: e2312e9d490803a4eb87174316982d1c, type: 3}
+  - {fileID: 21300000, guid: 45ae445fa5a9e0b41bf8594e0e199673, type: 3}
+  - {fileID: 21300000, guid: 649c653f2079e4641a6914c771d2139f, type: 3}
+  - {fileID: 21300000, guid: 15b4c720a9769884f99cd9895cf9bd96, type: 3}
+  - {fileID: 21300000, guid: 9bb893db24f49a0479d00b027faaf9c7, type: 3}
+  - {fileID: 21300000, guid: 3570206cb5a91b04d92d35dc716da4e3, type: 3}
