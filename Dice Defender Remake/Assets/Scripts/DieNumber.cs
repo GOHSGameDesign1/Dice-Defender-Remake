@@ -12,11 +12,24 @@ public class DieNumber : MonoBehaviour
     private void Awake()
     {
         childRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
         childRenderer.sprite = dieSprites[dieNumber - 1];
     }
 
     public int getDieNumber()
     {
         return dieNumber;
+    }
+
+    public void setDieNumber(int num)
+    {
+        if((0 < num) && (num < 7))
+        {
+            dieNumber = num;
+            // childRenderer.sprite = dieSprites[dieNumber - 1];
+        }
     }
 }

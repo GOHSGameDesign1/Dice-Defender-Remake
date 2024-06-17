@@ -7,6 +7,8 @@ public class Adding : MonoBehaviour
     private Slot[] slots = new Slot[2];
     private Transform[] spawnPoints = new Transform[2];
 
+    public GameObject diePrefab;
+
     private void Awake()
     {
         for(int i = 0; i < slots.Length; i++)
@@ -38,7 +40,22 @@ public class Adding : MonoBehaviour
         DieNumber die1 = slots[0].currentDie;
         DieNumber die2 = slots[1].currentDie;
 
-        Debug.Log(die1.getDieNumber() + " + " + die2.getDieNumber() + " = " + (die1.getDieNumber() + die2.getDieNumber()));
+        int sum = die1.getDieNumber() + die2.getDieNumber();
+
+        Debug.Log(die1.getDieNumber() + " + " + die2.getDieNumber() + " = " + (sum));
+
+        if(sum <= 6)
+        {
+            GameObject spawnedDie = Instantiate(diePrefab, spawnPoints[0].transform.position, Quaternion.identity);
+            spawnedDie.GetComponent<DieNumber>().setDieNumber(sum);
+        } else
+        {
+            GameObject spawnedDie = Instantiate(diePrefab, spawnPoints[0].transform.position, Quaternion.identity);
+            spawnedDie.GetComponent<DieNumber>().setDieNumber(6);
+
+            spawnedDie = Instantiate(diePrefab, spawnPoints[1].transform.position, Quaternion.identity);
+            spawnedDie.GetComponent <DieNumber>().setDieNumber(sum-6);
+        }
 
         DestroyDice();
     }
