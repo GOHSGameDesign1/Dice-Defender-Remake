@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Slot
   - Projectile
+  - Enemy
   layers:
   - Default
   - TransparentFX
