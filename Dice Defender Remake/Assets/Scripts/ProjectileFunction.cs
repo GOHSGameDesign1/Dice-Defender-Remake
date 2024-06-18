@@ -19,10 +19,4 @@ public class ProjectileFunction : MonoBehaviour
     {
         rb.velocity = direction.normalized * speed;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
