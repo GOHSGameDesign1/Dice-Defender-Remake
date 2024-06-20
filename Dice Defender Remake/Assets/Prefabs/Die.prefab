@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 8391447319888400729}
   - component: {fileID: 8391447319888400734}
   - component: {fileID: 8391447319888400735}
+  - component: {fileID: 6065898442805931137}
   m_Layer: 0
   m_Name: Die
   m_TagString: Untagged
@@ -252,3 +253,14 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!210 &6065898442805931137
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391447319888400730}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0

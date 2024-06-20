@@ -29,7 +29,7 @@ public class CannonShoot : MonoBehaviour
 
     void ShootDie()
     {
-        GameObject proj = Instantiate(dieProj, transform.position, Quaternion.identity);
+        GameObject proj = Instantiate(dieProj, cannonSprite.GetChild(0).position, Quaternion.identity);
         proj.GetComponent<ProjectileFunction>().direction = cannonSprite.right;
         proj.GetComponent<DieNumber>().setDieNumber(slot.currentDie.getDieNumber());
         slot.DestroyDie();
