@@ -6,10 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Spawning : MonoBehaviour
 {
-    [SerializeField] Vector2 spawnPositionBottomLeft;
-    [SerializeField] Vector2 spawnPositionTopRight;
-    [SerializeField] int[] spawnTimes;
-
+    [SerializeField] private Vector2 xRange, yRange, spawnTimeRange;
     [SerializeField] private GameObject[] spawnables;
 
     // Start is called before the first frame update
@@ -29,7 +26,7 @@ public class Spawning : MonoBehaviour
         WaitForSeconds waitTime;
         while (true)
         {
-            float time = Random.Range((float)spawnTimes[0], spawnTimes[1]);
+            float time = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
             waitTime = new WaitForSeconds(time);
             Debug.Log(time);
             Spawn();
@@ -42,8 +39,8 @@ public class Spawning : MonoBehaviour
         Debug.Log("Spawning Enemy");
         GameObject enemyToSpawn = spawnables[Random.Range(0, spawnables.Length)];
 
-        Vector2 spawnPoint = new Vector2(Random.Range(spawnPositionBottomLeft.x, spawnPositionTopRight.x),
-            Random.Range(spawnPositionBottomLeft.y, spawnPositionTopRight.y));
+        Vector2 spawnPoint = new Vector2(Random.Range(xRange.x, xRange.y),
+            Random.Range(yRange.x, yRange.y));
 
         GameObject spawnedEnemy = Instantiate(enemyToSpawn, spawnPoint, Quaternion.identity);
         if(spawnedEnemy.TryGetComponent(out ISpawnable enemy))

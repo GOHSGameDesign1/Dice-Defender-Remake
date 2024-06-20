@@ -1304,9 +1304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d88ec015f958e47871e4e3bd634fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPositionBottomLeft: {x: 10, y: -4.5}
-  spawnPositionTopRight: {x: 20, y: 4.5}
-  spawnTimes: 0200000005000000
+  xRange: {x: 10, y: 15}
+  yRange: {x: -4.5, y: 4.5}
+  spawnTimeRange: {x: 2, y: 5}
   spawnables:
   - {fileID: 7579971914779396369, guid: a09062a04d2104640b98978a46128c86, type: 3}
   - {fileID: 2161913996093847524, guid: a58c8319f892f0345be84877ef8c16d2, type: 3}
