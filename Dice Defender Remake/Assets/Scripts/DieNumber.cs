@@ -29,7 +29,7 @@ public class DieNumber : MonoBehaviour
         if((0 < num) && (num < 7))
         {
             dieNumber = num;
-            // childRenderer.sprite = dieSprites[dieNumber - 1];
+            childRenderer.sprite = dieSprites[dieNumber - 1];
         }
     }
 }

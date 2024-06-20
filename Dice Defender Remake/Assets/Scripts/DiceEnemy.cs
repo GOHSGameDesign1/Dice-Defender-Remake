@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiceEnemy : MonoBehaviour
+public class DiceEnemy : MonoBehaviour, ISpawnable
 {
     private DieNumber dieNumber;
 
     private void Awake()
     {
         dieNumber = GetComponent<DieNumber>();
+    }
+
+    public void OnSpawn()
+    {
+        dieNumber.setDieNumber(Random.Range(1, 7));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

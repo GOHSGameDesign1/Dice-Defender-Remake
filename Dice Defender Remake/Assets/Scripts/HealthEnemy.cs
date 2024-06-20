@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class HealthEnemy : MonoBehaviour
+public class HealthEnemy : MonoBehaviour, ISpawnable
 {
 
     private TextMeshPro m_TextMeshPro;
@@ -14,6 +14,11 @@ public class HealthEnemy : MonoBehaviour
     private void Awake()
     {
         m_TextMeshPro = transform.GetChild(0).GetComponent<TextMeshPro>();
+    }
+
+    public void OnSpawn()
+    {
+        maxHealth = Random.Range(4, 10);
     }
 
     // Start is called before the first frame update
