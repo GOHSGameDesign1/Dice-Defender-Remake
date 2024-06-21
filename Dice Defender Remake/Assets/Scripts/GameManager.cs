@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance;
+
+    [SerializeField]public int numberOfDice;
+
+    public GameObject diePrefab;
+    public Transform diceSpawnPoints;
+
+    private void Awake()
     {
-        
+        if(Instance != null)
+        {
+            Debug.Log("Multiple GameManagers found in the scene!");
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static GameManager GetInstance()
     {
-        
+        return Instance;
+    }
+
+    private void Update()
+    {
+        if(numberOfDice <= 0)
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                Instantiate(diePrefab, diceSpawnPoints.GetChild(i).position, Quaternion.identity);
+            }
+        }
     }
 }
