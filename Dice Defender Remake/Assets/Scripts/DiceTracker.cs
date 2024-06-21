@@ -6,11 +6,11 @@ public class DiceTracker : MonoBehaviour
 {
     private void Start()
     {
-        GameManager.GetInstance().numberOfDice++;
+        DiceManager.GetInstance().IncreaseDiceNumber();
     }
 
     private void OnDestroy()
     {
-        GameManager.GetInstance().numberOfDice--;
+        DiceManager.GetInstance().DecreaseDiceNumber();
     }
 }

@@ -6,11 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField]public int numberOfDice;
-
-    public GameObject diePrefab;
-    public Transform diceSpawnPoints;
-
     private void Awake()
     {
         if(Instance != null)
@@ -29,12 +24,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(numberOfDice <= 0)
-        {
-            for(int i = 0; i < 3; i++)
-            {
-                Instantiate(diePrefab, diceSpawnPoints.GetChild(i).position, Quaternion.identity);
-            }
-        }
+
     }
 }
