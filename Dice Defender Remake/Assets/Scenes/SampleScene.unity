@@ -3053,6 +3053,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2161913995515831279, guid: a58c8319f892f0345be84877ef8c16d2, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2161913996093847449, guid: a58c8319f892f0345be84877ef8c16d2, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3100,6 +3104,10 @@ PrefabInstance:
     - target: {fileID: 2161913996093847524, guid: a58c8319f892f0345be84877ef8c16d2, type: 3}
       propertyPath: m_Name
       value: Health Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161913996589414874, guid: a58c8319f892f0345be84877ef8c16d2, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a58c8319f892f0345be84877ef8c16d2, type: 3}
@@ -3167,6 +3175,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7579971913959077963, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7579971914779396369, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_Name
       value: Die Enemy
@@ -3214,6 +3226,10 @@ PrefabInstance:
     - target: {fileID: 7579971914779396372, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579971915577150170, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09062a04d2104640b98978a46128c86, type: 3}
