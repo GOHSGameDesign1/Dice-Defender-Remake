@@ -1221,6 +1221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c40f9d218fe2954594731bc0c81335e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCombo: 10
+  currentCombo: 0
+  comboMaxTimerLength: 20
+  comboCurrentTimerLength: 0
 --- !u!1 &505589051
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,8 +32,6 @@ public class Adding : MonoBehaviour
 
         int sum = die1.getDieNumber() + die2.getDieNumber();
 
-        Debug.Log(die1.getDieNumber() + " + " + die2.getDieNumber() + " = " + (sum));
-
         if(sum <= 6)
         {
             GameObject spawnedDie = Instantiate(diePrefab, spawnPoints[0].transform.position, Quaternion.identity);
@@ -50,6 +48,7 @@ public class Adding : MonoBehaviour
         if(die1.getDieNumber() < 6 && die2.getDieNumber() < 6)
         {
             PointsManager.GetInstance().AddPoints(pointsToAdd);
+            PointsManager.GetInstance().UpdateCombo(true);
             DiceManager.GetInstance().DecreaseTimer(timerDecrease);
         }
 

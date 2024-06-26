@@ -28,7 +28,6 @@ public class Spawning : MonoBehaviour
         {
             float time = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
             waitTime = new WaitForSeconds(time);
-            Debug.Log(time);
             Spawn();
             yield return waitTime;
         }

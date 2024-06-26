@@ -32,8 +32,6 @@ public class Subtracting : MonoBehaviour
 
         int diff = Mathf.Abs(die1.getDieNumber() - die2.getDieNumber());
 
-        Debug.Log(die1.getDieNumber() + " - " + die2.getDieNumber() + " = " + (diff));
-
         if (diff > 1)
         {
             GameObject spawnedDie = Instantiate(diePrefab, spawnPoints[0].transform.position, Quaternion.identity);
@@ -47,6 +45,7 @@ public class Subtracting : MonoBehaviour
 
         DiceManager.GetInstance().DecreaseTimer(timerDecrease);
         PointsManager.GetInstance().AddPoints(pointsToAdd);
+        PointsManager.GetInstance().UpdateCombo(true);
 
         DestroyDice();
     }

@@ -18,6 +18,14 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
         dieNumber.setDieNumber(Random.Range(1, 7));
     }
 
+    void Die()
+    {
+        PointsManager.GetInstance().AddPoints(pointsToAdd);
+        PointsManager.GetInstance().UpdateCombo(false);
+        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Projectile")) return;
@@ -31,9 +39,7 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
                     projectileDeath.Die();
                 }
 
-                PointsManager.GetInstance().AddPoints(pointsToAdd);
-                DiceManager.GetInstance().DecreaseTimer(timerDecrease);
-                Destroy(gameObject);
+                Die();
             }
         }
     }

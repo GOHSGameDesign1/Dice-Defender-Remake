@@ -59,6 +59,7 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
     void Die()
     {
         PointsManager.GetInstance().AddPoints(pointsToAddOnDeath);
+        PointsManager.GetInstance().UpdateCombo(false);
         DiceManager.GetInstance().DecreaseTimer(timerDecreaseDeath);
         Destroy(gameObject);
     }
