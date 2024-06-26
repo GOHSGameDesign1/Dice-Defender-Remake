@@ -9,7 +9,7 @@ public class PointsManager : MonoBehaviour
     public int points {  get; private set; }
 
     [SerializeField] private int maxCombo;
-    [SerializeField] private int currentCombo;
+    public int currentCombo { get; private set; }
     [SerializeField] private float comboMaxTimerLength;
     [SerializeField] private float comboCurrentTimerLength;
 
@@ -41,25 +41,29 @@ public class PointsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentCombo = 0;
         points = 0;
     }
 
     public void UpdateCombo(bool incCombo)
     {
-        if(currentCombo <= 0)
+
+        currentCombo = incCombo ? currentCombo + 1 : currentCombo;
+        currentCombo = Mathf.Clamp(currentCombo, 0, maxCombo);
+
+        if (currentCombo <= 0) return;
+        if(comboCurrentTimerLength > 0)
         {
+            comboCurrentTimerLength = comboMaxTimerLength;
+        } else if(comboCurrentTimerLength <= 0)
+        {
+            comboCurrentTimerLength = comboMaxTimerLength;
             StartCoroutine(ComboTimer());
         }
-
-        comboCurrentTimerLength = comboMaxTimerLength;
-
-        currentCombo = incCombo ? currentCombo+1 : currentCombo;
-        currentCombo = Mathf.Clamp(currentCombo, 0, maxCombo);
     }
 
     IEnumerator ComboTimer()
     {
-        comboCurrentTimerLength = comboMaxTimerLength;
         while(comboCurrentTimerLength > 0)
         {
             comboCurrentTimerLength -= Time.deltaTime;
@@ -67,6 +71,16 @@ public class PointsManager : MonoBehaviour
         }
         comboCurrentTimerLength = 0;
         currentCombo = 0;
+    }
+
+    public float GetMaxComboTime()
+    {
+        return comboMaxTimerLength;
+    }
+
+    public float GetCurrentComboTime()
+    {
+        return comboCurrentTimerLength;
     }
 
 

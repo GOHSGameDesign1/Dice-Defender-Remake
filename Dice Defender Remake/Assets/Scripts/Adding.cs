@@ -47,13 +47,18 @@ public class Adding : MonoBehaviour
 
         if(die1.getDieNumber() < 6 && die2.getDieNumber() < 6)
         {
-            PointsManager.GetInstance().AddPoints(pointsToAdd);
-            PointsManager.GetInstance().UpdateCombo(true);
-            DiceManager.GetInstance().DecreaseTimer(timerDecrease);
+            UpdateManagers();
         }
 
 
         DestroyDice();
+    }
+
+    void UpdateManagers()
+    {
+        PointsManager.GetInstance().UpdateCombo(true);
+        PointsManager.GetInstance().AddPoints(pointsToAdd);
+        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
     }
 
     bool SlotsAreFull()

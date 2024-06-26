@@ -43,11 +43,16 @@ public class Subtracting : MonoBehaviour
             spawnedDie.GetComponent<DieNumber>().setDieNumber(1);
         }
 
-        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
-        PointsManager.GetInstance().AddPoints(pointsToAdd);
-        PointsManager.GetInstance().UpdateCombo(true);
+        UpdateManagers();
 
         DestroyDice();
+    }
+
+    void UpdateManagers()
+    {
+        PointsManager.GetInstance().UpdateCombo(true);
+        PointsManager.GetInstance().AddPoints(pointsToAdd);
+        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
     }
 
     bool SlotsAreFull()

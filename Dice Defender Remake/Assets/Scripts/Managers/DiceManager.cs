@@ -88,6 +88,7 @@ public class DiceManager : MonoBehaviour
     void SpawnDice()
     {
         if (diceSpawnPoints == null) return;
+        if (numberOfDice >= 6) return;
         for (int i = 0; i < 3; i++)
         {
             GameObject die = Instantiate(diePrefab, diceSpawnPoints.GetChild(i).position, Quaternion.identity);

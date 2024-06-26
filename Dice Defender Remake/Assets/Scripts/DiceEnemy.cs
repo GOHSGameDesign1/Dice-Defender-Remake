@@ -20,10 +20,15 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
 
     void Die()
     {
-        PointsManager.GetInstance().AddPoints(pointsToAdd);
-        PointsManager.GetInstance().UpdateCombo(false);
-        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
+        UpdateManagers();
         Destroy(gameObject);
+    }
+
+    void UpdateManagers()
+    {
+        PointsManager.GetInstance().UpdateCombo(false);
+        PointsManager.GetInstance().AddPoints(pointsToAdd);
+        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
