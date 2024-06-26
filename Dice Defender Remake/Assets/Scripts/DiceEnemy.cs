@@ -5,6 +5,8 @@ using UnityEngine;
 public class DiceEnemy : MonoBehaviour, ISpawnable
 {
     private DieNumber dieNumber;
+    public float timerDecrease;
+    public int pointsToAdd;
 
     private void Awake()
     {
@@ -29,6 +31,8 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
                     projectileDeath.Die();
                 }
 
+                PointsManager.GetInstance().AddPoints(pointsToAdd);
+                DiceManager.GetInstance().DecreaseTimer(timerDecrease);
                 Destroy(gameObject);
             }
         }

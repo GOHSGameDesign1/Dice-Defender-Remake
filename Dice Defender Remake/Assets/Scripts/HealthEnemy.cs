@@ -9,6 +9,10 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
     private TextMeshPro m_TextMeshPro;
 
     [SerializeField] private int maxHealth;
+    public float timerDecreaseHit;
+    public float timerDecreaseDeath;
+    public int pointsToAddOnHit;
+    public int pointsToAddOnDeath;
     private int health;
 
     private void Awake()
@@ -39,6 +43,10 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
             if(health <= 0)
             {
                 Die();
+            } else
+            {
+                PointsManager.GetInstance().AddPoints(pointsToAddOnHit);
+                DiceManager.GetInstance().DecreaseTimer(timerDecreaseHit);
             }
         }
 
@@ -50,6 +58,8 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
 
     void Die()
     {
+        PointsManager.GetInstance().AddPoints(pointsToAddOnDeath);
+        DiceManager.GetInstance().DecreaseTimer(timerDecreaseDeath);
         Destroy(gameObject);
     }
 

@@ -9,6 +9,9 @@ public class Subtracting : MonoBehaviour
 
     public GameObject diePrefab;
 
+    public float timerDecrease;
+    public int pointsToAdd;
+
     private void Awake()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -41,6 +44,9 @@ public class Subtracting : MonoBehaviour
             GameObject spawnedDie = Instantiate(diePrefab, spawnPoints[0].transform.position, Quaternion.identity);
             spawnedDie.GetComponent<DieNumber>().setDieNumber(1);
         }
+
+        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
+        PointsManager.GetInstance().AddPoints(pointsToAdd);
 
         DestroyDice();
     }

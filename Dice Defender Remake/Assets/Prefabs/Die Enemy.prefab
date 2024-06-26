@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c850b2b3ef3e95a41ad9f19cd96a9cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepTime: 1
+  stepTime: 1.5
   moveAmount: 0.5
 --- !u!60 &7579971914779396395
 PolygonCollider2D:
@@ -220,6 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace1921141817584e916431565b25df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerDecrease: 0.75
+  pointsToAdd: 200
 --- !u!1 &7579971915577150170
 GameObject:
   m_ObjectHideFlags: 0

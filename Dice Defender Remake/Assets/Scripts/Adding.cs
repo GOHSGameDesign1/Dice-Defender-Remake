@@ -9,6 +9,9 @@ public class Adding : MonoBehaviour
 
     public GameObject diePrefab;
 
+    public float timerDecrease;
+    public int pointsToAdd;
+
     private void Awake()
     {
         for(int i = 0; i < slots.Length; i++)
@@ -43,6 +46,13 @@ public class Adding : MonoBehaviour
             spawnedDie = Instantiate(diePrefab, spawnPoints[1].transform.position, Quaternion.identity);
             spawnedDie.GetComponent <DieNumber>().setDieNumber(sum-6);
         }
+
+        if(die1.getDieNumber() < 6 && die2.getDieNumber() < 6)
+        {
+            PointsManager.GetInstance().AddPoints(pointsToAdd);
+            DiceManager.GetInstance().DecreaseTimer(timerDecrease);
+        }
+
 
         DestroyDice();
     }
