@@ -9,7 +9,7 @@ public class PointVFXAnim : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = transform.GetChild(0).GetComponent<Animator>();
         info = animator.GetCurrentAnimatorStateInfo(0);
     }
 

@@ -57,7 +57,7 @@ public class PointsManager : MonoBehaviour
             points *= currentCombo;
         }
 
-        if(text.TryGetComponent(out TextMeshPro tmp))
+        if(text.transform.GetChild(0).TryGetComponent(out TextMeshPro tmp))
         {
             tmp.text = points.ToString();
         }
