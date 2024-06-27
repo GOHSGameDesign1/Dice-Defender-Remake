@@ -28,6 +28,7 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
     {
         PointsManager.GetInstance().UpdateCombo(false);
         PointsManager.GetInstance().AddPoints(pointsToAdd);
+        PointsManager.GetInstance().SpawnPointVFX(pointsToAdd, transform.position);
         DiceManager.GetInstance().DecreaseTimer(timerDecrease);
     }
 

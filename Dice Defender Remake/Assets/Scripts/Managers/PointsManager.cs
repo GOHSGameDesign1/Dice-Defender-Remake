@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PointsManager : MonoBehaviour
 {
     public static PointsManager instance;
 
     public int points {  get; private set; }
+
+    [SerializeField] private GameObject pointPrefab;
 
     [SerializeField] private int maxCombo;
     public int currentCombo { get; private set; }
@@ -43,6 +46,21 @@ public class PointsManager : MonoBehaviour
     {
         currentCombo = 0;
         points = 0;
+    }
+
+    public void SpawnPointVFX(int points, Vector2 position)
+    {
+        GameObject text = Instantiate(pointPrefab, position, Quaternion.identity);
+
+        if(currentCombo > 0)
+        {
+            points *= currentCombo;
+        }
+
+        if(text.TryGetComponent(out TextMeshPro tmp))
+        {
+            tmp.text = points.ToString();
+        }
     }
 
     public void UpdateCombo(bool incCombo)
