@@ -52,6 +52,7 @@ public class Subtracting : MonoBehaviour
     {
         PointsManager.GetInstance().UpdateCombo(true);
         PointsManager.GetInstance().AddPoints(pointsToAdd);
+        PointsManager.GetInstance().SpawnPointVFX(pointsToAdd, transform.position);
         DiceManager.GetInstance().DecreaseTimer(timerDecrease);
     }
 

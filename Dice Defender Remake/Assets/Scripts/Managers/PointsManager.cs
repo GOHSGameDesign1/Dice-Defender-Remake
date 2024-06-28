@@ -50,7 +50,7 @@ public class PointsManager : MonoBehaviour
 
     public void SpawnPointVFX(int points, Vector2 position)
     {
-        GameObject text = Instantiate(pointPrefab, position, Quaternion.identity);
+        GameObject text = Instantiate(pointPrefab, position, Quaternion.Euler(0, 0, Random.Range(-10f, 10f)));
 
         if(currentCombo > 0)
         {
@@ -59,7 +59,7 @@ public class PointsManager : MonoBehaviour
 
         if(text.transform.GetChild(0).TryGetComponent(out TextMeshPro tmp))
         {
-            tmp.text = points.ToString();
+            tmp.text = "+" + points.ToString();
         }
     }
 

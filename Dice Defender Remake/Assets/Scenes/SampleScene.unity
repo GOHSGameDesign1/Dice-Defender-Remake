@@ -851,7 +851,7 @@ MonoBehaviour:
   diePrefab: {fileID: 8391447319888400730, guid: 822317094d9964244b2af5c988a05a15, type: 3}
   diceSpawnPoints: {fileID: 1760724903}
   spawnWaitTime: 12
-  spawnMinimumDecreaseTime: 1
+  spawnMinimumDecreaseTime: 3
   spawnTimer: 0
 --- !u!4 &247999989
 Transform:

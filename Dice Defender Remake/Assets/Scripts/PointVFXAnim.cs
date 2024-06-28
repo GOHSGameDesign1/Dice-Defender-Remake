@@ -13,11 +13,15 @@ public class PointVFXAnim : MonoBehaviour
         info = animator.GetCurrentAnimatorStateInfo(0);
     }
 
+
     // Update is called once per frame
     void Update()
     {
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, 0.5f * Time.deltaTime);
+
         // When animation for the state has finished playing, destroy itself
-        if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
             Destroy(gameObject);
         }
