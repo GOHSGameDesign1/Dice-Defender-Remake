@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DiceManager : MonoBehaviour
 {
@@ -76,7 +78,7 @@ public class DiceManager : MonoBehaviour
         while(true)
         {
             spawnTimer = spawnWaitTime;
-            SpawnDice();
+            StartCoroutine(SpawnDice());
             while (spawnTimer > 0)
             {
                 spawnTimer -= Time.deltaTime;
@@ -85,14 +87,16 @@ public class DiceManager : MonoBehaviour
         }
     }
 
-    void SpawnDice()
+    IEnumerator SpawnDice()
     {
-        if (diceSpawnPoints == null) return;
-        if (numberOfDice >= 6) return;
+        if (diceSpawnPoints == null) yield break;
+        if (numberOfDice >= 6) yield break;
         for (int i = 0; i < 3; i++)
         {
+            Random.InitState((int)DateTime.Now.Ticks + i);
             GameObject die = Instantiate(diePrefab, diceSpawnPoints.GetChild(i).position, Quaternion.identity);
             die.GetComponent<DieNumber>().setDieNumber(Random.Range(1, 7));
+            yield return null;
         }
     }
 }

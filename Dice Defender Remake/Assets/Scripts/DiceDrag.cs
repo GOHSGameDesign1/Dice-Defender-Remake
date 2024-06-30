@@ -31,6 +31,11 @@ public class DiceDrag : MonoBehaviour, IDraggable
     {
         gettingDragged=true;
         dragOffset = (Vector2)transform.position - mousePos;
+
+        if(TryGetComponent(out DieSpawnAnimation dieAnim))
+        {
+            dieAnim.fixRotation();
+        }
         
         if(currentSlot != null )
         {
