@@ -7,16 +7,19 @@ public class DieNumber : MonoBehaviour
     [SerializeField][Range(1,6)] private int dieNumber;
 
     [SerializeField] private Sprite[] dieSprites = new Sprite[6];
-    private SpriteRenderer childRenderer;
+    public SpriteRenderer childRenderer;
 
     private void Awake()
     {
-        childRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        //childRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        childRenderer.sprite = dieSprites[dieNumber - 1];
+        if (childRenderer != null)
+        {
+            childRenderer.sprite = dieSprites[dieNumber - 1];
+        }
     }
 
     public int getDieNumber()
@@ -29,6 +32,7 @@ public class DieNumber : MonoBehaviour
         if((0 < num) && (num < 7))
         {
             dieNumber = num;
+            if (childRenderer == null) return;
             childRenderer.sprite = dieSprites[dieNumber - 1];
         }
     }
