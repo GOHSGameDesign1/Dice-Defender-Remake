@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7766870326687557159}
   - component: {fileID: 5479718775485772843}
   - component: {fileID: 5957832211547209547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Die Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8648370669007429215}
   - component: {fileID: 8870516808292692922}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Die Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5393406251453446002}
   - component: {fileID: 5846401518093772222}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Die Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 6065898442805931137}
   - component: {fileID: 5134186029217326954}
   - component: {fileID: 1727537991594908343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Die
   m_TagString: Untagged
   m_Icon: {fileID: 0}
