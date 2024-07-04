@@ -27,7 +27,7 @@ public class DieSpawnAnimation : MonoBehaviour
         //transform.rotation = Quaternion.Euler(0, 0, rotation);
         startPosition = transform.position;
         transform.GetChild(0).localPosition = new Vector2(0, -transform.position.y - 5.5f);
-        transform.GetChild(1).localPosition = new Vector2(0.087f, -transform.position.y - 5.5f - 0.084f);
+        transform.GetChild(1).localPosition = new Vector2(0.087f, -transform.position.y - 5.5f - 0.084f); // Have to hardcode shadow distance AAAAAAAAAAAAAAAAAAAAAA
         StartCoroutine(LerpSmoothPosition());
         
     }
