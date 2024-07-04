@@ -34,15 +34,11 @@ public class Adding : MonoBehaviour
 
         if(sum <= 6)
         {
-            GameObject spawnedDie = Instantiate(diePrefab, spawnPoints[0].transform.position, Quaternion.identity);
-            spawnedDie.GetComponent<DieNumber>().setDieNumber(sum);
+            DiceManager.GetInstance().SpawnDie(sum);
         } else
         {
-            GameObject spawnedDie = Instantiate(diePrefab, spawnPoints[0].transform.position, Quaternion.identity);
-            spawnedDie.GetComponent<DieNumber>().setDieNumber(6);
-
-            spawnedDie = Instantiate(diePrefab, spawnPoints[1].transform.position, Quaternion.identity);
-            spawnedDie.GetComponent <DieNumber>().setDieNumber(sum-6);
+            DiceManager.GetInstance().SpawnDie(6);
+            DiceManager.GetInstance().SpawnDie(6-sum);
         }
 
         if(die1.getDieNumber() < 6 && die2.getDieNumber() < 6)

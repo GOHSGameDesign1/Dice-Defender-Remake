@@ -14,9 +14,12 @@ public class DiceManager : MonoBehaviour
     public GameObject diePrefab;
     public Transform diceSpawnPoints;
 
+    [SerializeField] private int maxDice;
     public float spawnWaitTime;
     public float spawnMinimumDecreaseTime;
     [SerializeField] private float spawnTimer;
+
+    public Vector2 spawnPoint;
 
     private void Awake()
     {
@@ -81,8 +84,13 @@ public class DiceManager : MonoBehaviour
             StartCoroutine(SpawnDice());
             while (spawnTimer > 0)
             {
-                spawnTimer -= Time.deltaTime;
                 yield return null;
+                if (numberOfDice >= maxDice)
+                {
+                    spawnTimer = spawnWaitTime;
+                    continue;
+                }
+                spawnTimer -= Time.deltaTime;
             }
         }
     }
@@ -90,13 +98,49 @@ public class DiceManager : MonoBehaviour
     IEnumerator SpawnDice()
     {
         if (diceSpawnPoints == null) yield break;
-        if (numberOfDice >= 6) yield break;
-        for (int i = 0; i < 3; i++)
+        if (numberOfDice >= maxDice) yield break;
+        int numToSpawn = maxDice - numberOfDice;
+        numToSpawn = Mathf.Clamp(numToSpawn, 0, 3);
+        for (int i = 0; i < numToSpawn; i++)
         {
             Random.InitState((int)DateTime.Now.Ticks + i);
-            GameObject die = Instantiate(diePrefab, diceSpawnPoints.GetChild(i).position, Quaternion.identity);
-            die.GetComponent<DieNumber>().setDieNumber(Random.Range(1, 7));
-            yield return null;
+            SpawnDie(Random.Range(1, 7));
+            yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    public void SpawnDie(int num)
+    {
+        Vector2 spawnPos = diceSpawnPoints.GetChild(0).position;
+
+        int counter = 0;
+        while(true)
+        {
+            spawnPos = diceSpawnPoints.GetChild(counter%diceSpawnPoints.childCount).position;
+
+            if (counter > 2)
+            {
+                spawnPos += Vector2.up * 1.5f * (counter / diceSpawnPoints.childCount);
+                if (!Physics2D.OverlapArea(new Vector2(spawnPos.x - 0.5f, spawnPos.y - 0.5f), new Vector2(spawnPos.x + 0.5f, spawnPos.y + 0.5f)))
+                {
+                    break;
+                }
+            }
+            else
+            {
+                // Checks under the screen for spawning dice if spawning the dice in an original location defined by the spawnPoints and not above any of them
+                if (!Physics2D.OverlapArea(new Vector2(spawnPos.x - 0.5f, spawnPos.y - 2f), new Vector2(spawnPos.x + 0.5f, spawnPos.y + 0.5f)))
+                {
+                    break;
+                }
+            }
+            counter++;
+        }
+
+        //if (!Physics2D.OverlapArea(new Vector2(spawnPos.x - 0.5f, spawnPos.y - 0.5f), new Vector2(spawnPos.x + 0.5f, spawnPos.y + 0.5f)))
+        //{
+        GameObject die = Instantiate(diePrefab, spawnPos, Quaternion.identity);
+        die.GetComponent<DieNumber>().setDieNumber(num);
+        //}
     }
 }

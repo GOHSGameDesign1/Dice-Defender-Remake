@@ -450,7 +450,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
 --- !u!114 &5134186029217326954
 MonoBehaviour:
   m_ObjectHideFlags: 0

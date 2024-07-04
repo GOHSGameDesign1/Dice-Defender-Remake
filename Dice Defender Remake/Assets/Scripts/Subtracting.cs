@@ -34,13 +34,11 @@ public class Subtracting : MonoBehaviour
 
         if (diff > 1)
         {
-            GameObject spawnedDie = Instantiate(diePrefab, spawnPoints[0].transform.position, Quaternion.identity);
-            spawnedDie.GetComponent<DieNumber>().setDieNumber(diff);
+            DiceManager.GetInstance().SpawnDie(diff);
         }
         else
         {
-            GameObject spawnedDie = Instantiate(diePrefab, spawnPoints[0].transform.position, Quaternion.identity);
-            spawnedDie.GetComponent<DieNumber>().setDieNumber(1);
+            DiceManager.GetInstance().SpawnDie(1);
         }
 
         UpdateManagers();

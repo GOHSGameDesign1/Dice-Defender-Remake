@@ -8,7 +8,7 @@ public class DieShadow : MonoBehaviour
     public Transform followTransform;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
 
         offset = followTransform.position - transform.position;

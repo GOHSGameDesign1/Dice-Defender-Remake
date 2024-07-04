@@ -26,7 +26,8 @@ public class DieSpawnAnimation : MonoBehaviour
         StartCoroutine(Rotate());
         //transform.rotation = Quaternion.Euler(0, 0, rotation);
         startPosition = transform.position;
-        transform.position = new Vector2(transform.position.x, transform.position.y - 4);
+        transform.GetChild(0).localPosition = new Vector2(0, -transform.position.y - 5.5f);
+        transform.GetChild(1).localPosition = new Vector2(0.087f, -transform.position.y - 5.5f - 0.084f);
         StartCoroutine(LerpSmoothPosition());
         
     }
@@ -73,12 +74,12 @@ public class DieSpawnAnimation : MonoBehaviour
 
     IEnumerator LerpSmoothPosition()
     {
-        while(startPosition.y - transform.position.y > 0.01f)
+        while(transform.GetChild(0).localPosition.y < -0.01f)
         {
-            transform.position = ExpDecay(transform.position, startPosition, 10, Time.deltaTime);
+            transform.GetChild(0).localPosition = ExpDecay(transform.GetChild(0).localPosition, Vector2.zero, 10, Time.deltaTime);
             yield return null;
         }
-        transform.position = startPosition;
+        transform.GetChild(0).localPosition = Vector2.zero;
     }
 
     Vector2 ExpDecay(Vector2 a, Vector2 b, float decay, float dt)
