@@ -32,22 +32,21 @@ public class Adding : MonoBehaviour
 
         int sum = die1.getDieNumber() + die2.getDieNumber();
 
-        if(sum <= 6)
+        DestroyDice();
+
+        if (sum <= 6)
         {
             DiceManager.GetInstance().SpawnDie(sum);
         } else
         {
             DiceManager.GetInstance().SpawnDie(6);
-            DiceManager.GetInstance().SpawnDie(6-sum);
+            DiceManager.GetInstance().SpawnDie(sum-6);
         }
 
         if(die1.getDieNumber() < 6 && die2.getDieNumber() < 6)
         {
             UpdateManagers();
         }
-
-
-        DestroyDice();
     }
 
     void UpdateManagers()

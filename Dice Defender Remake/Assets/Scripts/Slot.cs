@@ -48,6 +48,8 @@ public class Slot : MonoBehaviour
             return;
         }
 
+        DiceManager.GetInstance().DecreaseDiceNumber();
+
         Destroy(currentDie.gameObject);
         RemoveDie();
     }

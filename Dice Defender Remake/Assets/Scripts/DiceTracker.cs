@@ -11,6 +11,6 @@ public class DiceTracker : MonoBehaviour
 
     private void OnDestroy()
     {
-        DiceManager.GetInstance().DecreaseDiceNumber();
+        //DiceManager.GetInstance().DecreaseDiceNumber();
     }
 }
