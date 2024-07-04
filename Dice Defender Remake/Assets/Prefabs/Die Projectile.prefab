@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 240931168761486464}
   - component: {fileID: 240931168761486471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Die Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 165979552949153498}
   - component: {fileID: 3311254487837329749}
   - component: {fileID: 7751185655731829389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Die Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 6202495113802653564}
   - component: {fileID: 5804202810870106843}
   - component: {fileID: 7173283981228377735}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Die Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
