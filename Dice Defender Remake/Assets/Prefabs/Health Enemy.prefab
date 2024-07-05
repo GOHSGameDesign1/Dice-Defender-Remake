@@ -292,8 +292,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  timerDecreaseHit: 0.9
-  timerDecreaseDeath: 0.6
+  timerDecreaseHit: 0
+  timerDecreaseDeath: 6
   pointsToAddOnHit: 50
   pointsToAddOnDeath: 200
 --- !u!61 &5414634469708287973

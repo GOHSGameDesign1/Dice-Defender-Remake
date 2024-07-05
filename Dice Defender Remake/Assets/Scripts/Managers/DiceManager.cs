@@ -71,7 +71,7 @@ public class DiceManager : MonoBehaviour
     {
         if(spawnTimer > spawnMinimumDecreaseTime)
         {
-            spawnTimer *= timeToDecrease;
+            spawnTimer -= timeToDecrease;
             spawnTimer = Mathf.Clamp(spawnTimer, spawnMinimumDecreaseTime, 999);
         }
     }

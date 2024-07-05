@@ -180,8 +180,8 @@ MonoBehaviour:
   stepTime: 1.5
   moveAmount: 0.5
   walkSprites:
-  - {fileID: 21300000, guid: 6b156142593d54f4d9246fa8424f19a7, type: 3}
-  - {fileID: 21300000, guid: 0e78eaa87fcb93648beb64eb83834daa, type: 3}
+  - {fileID: 21300000, guid: b2e398c16aa49484294c880f5cd68554, type: 3}
+  - {fileID: 21300000, guid: 1cfe462702f6fc04eaef5fa2c256c54f, type: 3}
 --- !u!60 &7579971914779396395
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace1921141817584e916431565b25df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDecrease: 0.75
+  timerDecrease: 4.5
   pointsToAdd: 200
 --- !u!61 &3294617026393549240
 BoxCollider2D:

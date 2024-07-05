@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diePrefab: {fileID: 8391447319888400730, guid: 822317094d9964244b2af5c988a05a15, type: 3}
-  timerDecrease: 0.5
+  timerDecrease: 6
   pointsToAdd: 350
 --- !u!1 &96242568
 GameObject:
@@ -918,7 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diePrefab: {fileID: 8391447319888400730, guid: 822317094d9964244b2af5c988a05a15, type: 3}
   diceSpawnPoints: {fileID: 1760724903}
-  maxDice: 3
+  maxDice: 4
   spawnWaitTime: 12
   spawnMinimumDecreaseTime: 0
   spawnTimer: 0
@@ -988,7 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diePrefab: {fileID: 8391447319888400730, guid: 822317094d9964244b2af5c988a05a15, type: 3}
-  timerDecrease: 0.5
+  timerDecrease: 6
   pointsToAdd: 200
 --- !u!1 &305701492
 GameObject:
@@ -1203,7 +1203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 339443879}
   - component: {fileID: 339443880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CannonBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1218,8 +1218,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339443878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.82, y: -0.02, z: 0}
-  m_LocalScale: {x: 1.4754465, y: 1.4754465, z: 1.4754465}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.4754465}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928847539}
@@ -1266,7 +1266,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: ab705e1f0b9cc374c82183a40ba9d767, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd2ba98a74623534e9752a61708d1f4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1649,7 +1649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3180863159346320708, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3180863159346320709, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_SortingOrder
@@ -1673,11 +1673,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3180863159346320710, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3180863159346320710, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3180863159346320710, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1740,7 +1740,7 @@ GameObject:
   - component: {fileID: 572808396}
   - component: {fileID: 572808395}
   - component: {fileID: 572808394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cannon Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1800,7 +1800,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 65fe5c67a8f12514594de365060ab0ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57045fd4cacd5cd438ac1ae8dc3a378f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1819,8 +1819,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572808393}
   m_LocalRotation: {x: -0, y: -0, z: 0.0013657613, w: 0.9999991}
-  m_LocalPosition: {x: -3.8474, y: 0.04, z: 0.1}
-  m_LocalScale: {x: 0.68356335, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0185, y: 0, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 795468833}
@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9433962, g: 0.8372813, b: 0.52954787, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2226,7 +2226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 795468833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2241,7 +2241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795468832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.12, y: -0.057, z: 0}
+  m_LocalPosition: {x: 0.97, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2484,7 +2484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928847539}
   - component: {fileID: 928847540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2499,8 +2499,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928847538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.1730347, y: 0.47430873, z: 0.085848495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.78, y: 0.31, z: 0.085848495}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 572808396}
@@ -4376,9 +4376,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7579971913959077961, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: m_Size.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579971913959077961, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: m_Size.y
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579971913959077961, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6b156142593d54f4d9246fa8424f19a7, type: 3}
+      objectReference: {fileID: 21300000, guid: b2e398c16aa49484294c880f5cd68554, type: 3}
     - target: {fileID: 7579971913959077963, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -4431,18 +4439,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7579971914779396373, guid: a09062a04d2104640b98978a46128c86, type: 3}
-      propertyPath: walkSprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7579971914779396373, guid: a09062a04d2104640b98978a46128c86, type: 3}
-      propertyPath: walkSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 6b156142593d54f4d9246fa8424f19a7, type: 3}
-    - target: {fileID: 7579971914779396373, guid: a09062a04d2104640b98978a46128c86, type: 3}
-      propertyPath: walkSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0e78eaa87fcb93648beb64eb83834daa, type: 3}
     - target: {fileID: 7579971915577150170, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_Layer
       value: 2
