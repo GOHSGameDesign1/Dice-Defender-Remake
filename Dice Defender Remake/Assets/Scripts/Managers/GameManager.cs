@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public delegate void OnUnPause();
     public static event OnUnPause onUnPause;
 
+    public delegate void OnDeath();
+    public static event OnDeath onDeath;
+
     private bool paused;
 
     private void Awake()
@@ -64,5 +67,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over!!!");
+        onDeath.Invoke();
     }
 }
