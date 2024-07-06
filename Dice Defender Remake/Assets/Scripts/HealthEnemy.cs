@@ -34,6 +34,15 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (collision.CompareTag("Player"))
+        {
+            HealthManager.GetInstance().DecreaseHealth(1);
+            DeSpawn();
+        }
+
+
+
         if (!collision.CompareTag("Projectile")) return;
 
         if(collision.TryGetComponent(out DieNumber die))
@@ -63,6 +72,11 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
         PointsManager.GetInstance().AddPoints(pointsToAddOnDeath);
         PointsManager.GetInstance().SpawnPointVFX(pointsToAddOnDeath, transform.position);
         DiceManager.GetInstance().DecreaseTimer(timerDecreaseDeath);
+        Destroy(gameObject);
+    }
+
+    void DeSpawn()
+    {
         Destroy(gameObject);
     }
 

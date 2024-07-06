@@ -60,4 +60,9 @@ public class GameManager : MonoBehaviour
         onUnPause.Invoke();
         paused = false;
     }
+
+    public void GameOver()
+    {
+        Debug.Log("Game Over!!!");
+    }
 }

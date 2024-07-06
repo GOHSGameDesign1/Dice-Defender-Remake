@@ -24,6 +24,11 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
         Destroy(gameObject);
     }
 
+    void DeSpawn()
+    {
+        Destroy(gameObject);
+    }
+
     void UpdateManagers()
     {
         PointsManager.GetInstance().UpdateCombo(false);
@@ -34,6 +39,13 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (collision.CompareTag("Player"))
+        {
+            HealthManager.GetInstance().DecreaseHealth(1);
+            DeSpawn();
+        }
+
         if (!collision.CompareTag("Projectile")) return;
         if (collision.TryGetComponent(out DieNumber projDie))
         {
