@@ -24,6 +24,15 @@ public class CanvasPauseAndDeath : MonoBehaviour
     void Pause()
     {
         pausePanel.SetActive(true);
+        
+        for(int i = 0; i < pausePanel.transform.childCount; i++)
+        {
+            if(pausePanel.transform.GetChild(i).TryGetComponent(out PanelUIElement element))
+            {
+                Debug.Log("Found element");
+                element.StartSpawnAnim();
+            }
+        }
     }
 
     void Resume()
