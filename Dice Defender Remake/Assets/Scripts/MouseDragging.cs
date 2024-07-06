@@ -10,10 +10,12 @@ public class MouseDragging : MonoBehaviour
     public delegate void OnMouseUp();
     public static event OnMouseUp onMouseUp;
 
+    private bool canSendRaycast;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        canSendRaycast = true;
     }
 
     // Update is called once per frame
@@ -32,6 +34,11 @@ public class MouseDragging : MonoBehaviour
 
     void SendRaycast()
     {
+        if(!canSendRaycast)
+        {
+            Debug.LogWarning("Paused!");
+            return;
+        }
         Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
         RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
 
@@ -58,5 +65,27 @@ public class MouseDragging : MonoBehaviour
             onMouseUp.Invoke();
         }
 
+    }
+
+    void DisableSendRaycast()
+    {
+        canSendRaycast = false;
+    }
+
+    void EnableSendRaycast()
+    {
+        canSendRaycast = true;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.onPause += DisableSendRaycast;
+        GameManager.onUnPause += EnableSendRaycast;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.onPause -= DisableSendRaycast;
+        GameManager.onUnPause -= EnableSendRaycast;
     }
 }

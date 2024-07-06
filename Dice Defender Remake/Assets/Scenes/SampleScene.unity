@@ -918,7 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diePrefab: {fileID: 8391447319888400730, guid: 822317094d9964244b2af5c988a05a15, type: 3}
   diceSpawnPoints: {fileID: 1760724903}
-  maxDice: 4
+  maxDice: 3
   spawnWaitTime: 12
   spawnMinimumDecreaseTime: 0
   spawnTimer: 0
@@ -1218,7 +1218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339443878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.06, y: 0, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.4754465}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2499,7 +2499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928847538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.78, y: 0.31, z: 0.085848495}
+  m_LocalPosition: {x: -8.31, y: 0.31, z: 0.085848495}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

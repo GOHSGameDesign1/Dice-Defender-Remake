@@ -6,6 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public delegate void OnPause();
+    public static event OnPause onPause;
+
+    public delegate void OnUnPause();
+    public static event OnUnPause onUnPause;
+
+    private bool paused;
+
     private void Awake()
     {
         if(Instance != null)
@@ -15,6 +23,8 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        paused = false;
     }
 
     public static GameManager GetInstance()
@@ -24,6 +34,30 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (paused)
+            {
+                UnPause();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
 
+    void Pause()
+    {
+        paused = true;
+        Time.timeScale = 0f;
+        onPause.Invoke();
+    }
+
+    void UnPause()
+    {
+        Time.timeScale = 1f;
+        onUnPause.Invoke();
+        paused = false;
     }
 }
