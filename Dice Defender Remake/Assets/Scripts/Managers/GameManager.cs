@@ -50,14 +50,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Pause()
+    public void Pause()
     {
         paused = true;
         Time.timeScale = 0f;
         onPause.Invoke();
     }
 
-    void UnPause()
+    public void UnPause()
     {
         Time.timeScale = 1f;
         onUnPause.Invoke();
