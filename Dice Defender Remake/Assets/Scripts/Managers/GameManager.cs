@@ -69,4 +69,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over!!!");
         onDeath.Invoke();
     }
+
+    public void Restart()
+    {
+        Debug.Log("Restarting Game...");
+    }
 }
