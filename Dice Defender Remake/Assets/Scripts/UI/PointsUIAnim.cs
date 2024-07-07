@@ -8,6 +8,10 @@ public class PointsUIAnim : MonoBehaviour
 
     private TextMeshProUGUI tmp;
 
+    public ParticleSystem particles;
+
+    public float animLength;
+
     private void Awake()
     {
         tmp = GetComponent<TextMeshProUGUI>();
@@ -23,14 +27,15 @@ public class PointsUIAnim : MonoBehaviour
     {
         float t = 0;
 
-        while(t < 5)
+        while(t < animLength)
         {
-            int currentPoints = (int)Mathf.Lerp(0, PointsManager.GetInstance().points, t / 5f);
+            int currentPoints = (int)Mathf.Lerp(0, PointsManager.GetInstance().points, t / animLength);
             tmp.text = currentPoints.ToString();
             t += Time.deltaTime;
             yield return null;
         }
 
         tmp.text = PointsManager.GetInstance().points.ToString();
+        Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
     }
 }

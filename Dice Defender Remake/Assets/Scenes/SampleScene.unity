@@ -1402,9 +1402,9 @@ GameObject:
   m_Component:
   - component: {fileID: 342666386}
   - component: {fileID: 342666388}
+  - component: {fileID: 342666389}
   - component: {fileID: 342666390}
   - component: {fileID: 342666387}
-  - component: {fileID: 342666389}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1541,6 +1541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07b34be69eae7b49a3fd05a11fcf026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particles: {fileID: 8740413704938805656, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+  animLength: 2.5
 --- !u!114 &342666390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2409,7 +2411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 1414621032}
   deathPanel: {fileID: 2095662851}
-  deathPointDuration: 5
+  deathPointDuration: 2.5
 --- !u!1 &672887629
 GameObject:
   m_ObjectHideFlags: 0
@@ -5731,3 +5733,60 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e9219f149a094654cae22748062d5b4a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 822317094d9964244b2af5c988a05a15, type: 3}
+--- !u!1001 &8740413705426855800
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0497615
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805657, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805670, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_Name
+      value: Death Points VFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
