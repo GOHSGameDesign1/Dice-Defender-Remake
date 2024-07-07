@@ -7,6 +7,8 @@ public class CanvasPauseAndDeath : MonoBehaviour
     public GameObject pausePanel;
     public GameObject deathPanel;
 
+    public float deathPointDuration;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,23 +17,9 @@ public class CanvasPauseAndDeath : MonoBehaviour
         deathPanel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void Pause()
     {
         pausePanel.SetActive(true);
-        
-        for(int i = 0; i < pausePanel.transform.childCount; i++)
-        {
-            if(pausePanel.transform.GetChild(i).TryGetComponent(out PanelUIElement element))
-            {
-                element.StartSpawnAnim();
-            }
-        }
     }
 
     void Resume()
@@ -41,7 +29,28 @@ public class CanvasPauseAndDeath : MonoBehaviour
 
     void EnableDeathPanel()
     {
+        StartCoroutine(DeathPanel());
+    }
+
+    IEnumerator DeathPanel()
+    {
+        GameObject[] children = new GameObject[deathPanel.transform.childCount];
+        for(int i = 0; i < deathPanel.transform.childCount; i++){
+            deathPanel.transform.GetChild(i).gameObject.SetActive(false);
+            children[i] = deathPanel.transform.GetChild(i).gameObject;
+        }
         deathPanel.SetActive(true);
+
+        children[0].SetActive(true);
+
+
+
+        yield return new WaitForSeconds(deathPointDuration);
+
+        for(int i = 1; i<= children.Length - 1; i++)
+        {
+            children[i].SetActive(true);
+        }
     }
 
     private void OnEnable()

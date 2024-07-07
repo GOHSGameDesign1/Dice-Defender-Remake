@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class PanelUIElement : MonoBehaviour
 {
-    private RectTransform rect; 
+    protected RectTransform rect; 
 
-    private Vector2 startPos;
+    protected Vector2 startPos {  get; private set; }
 
     [SerializeField] private AnimationCurve curve;
     [SerializeField] private float rotationDuration;
@@ -16,19 +17,31 @@ public class PanelUIElement : MonoBehaviour
 
     private bool isHighlighted;
 
-    private void Awake()
+    public void Awake()
     {
+        InitialSetup();
+    }
+
+    // Start is called before the first frame update
+     public void OnEnable()
+    {
+
+        SpawnSetup();
+    }
+
+    protected void InitialSetup()
+    {
+        Debug.Log("Setup!!!");
         rect = GetComponent<RectTransform>();
         startPos = rect.position;
     }
 
-    // Start is called before the first frame update
-     void OnEnable()
+    protected void SpawnSetup()
     {
-        //startPos = rect.position;
-
         StartCoroutine(rotateAnim());
         isHighlighted = false;
+        StartCoroutine(spawnAnim(startPos));
+        //rect.position = new Vector2(0, -10f);
     }
 
     // Update is called once per frame
@@ -44,21 +57,7 @@ public class PanelUIElement : MonoBehaviour
         }
     }
 
-    public void EnableHiglight()
-    {
-        isHighlighted = true;
-    }
-    public void DisableHighlight()
-    {
-        isHighlighted=false;
-    }
-
-    public void StartSpawnAnim()
-    {
-        StartCoroutine(spawnAnim(startPos));
-    }
-
-    IEnumerator spawnAnim(Vector2 target)
+    protected IEnumerator spawnAnim(Vector2 target)
     {
         rect.position = new Vector2(target.x, -10f);
         while(Vector2.Distance(rect.position, target) > 0.01f)
@@ -70,9 +69,8 @@ public class PanelUIElement : MonoBehaviour
         rect.position = target;
     }
 
-    IEnumerator rotateAnim()
+    protected IEnumerator rotateAnim()
     {
-        Debug.Log("YEAH");
         while (true)
         {
             float t = 0;
@@ -99,5 +97,14 @@ public class PanelUIElement : MonoBehaviour
     Vector3 ExpDecay(Vector3 a, Vector3 b, float decay, float dt)
     {
         return b + (a - b) * Mathf.Exp(-decay * dt);
+    }    
+    
+    public void EnableHiglight()
+    {
+        isHighlighted = true;
+    }
+    public void DisableHighlight()
+    {
+        isHighlighted=false;
     }
 }
