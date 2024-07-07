@@ -29,7 +29,6 @@ public class CanvasPauseAndDeath : MonoBehaviour
         {
             if(pausePanel.transform.GetChild(i).TryGetComponent(out PanelUIElement element))
             {
-                Debug.Log("Found element");
                 element.StartSpawnAnim();
             }
         }

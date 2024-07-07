@@ -35,7 +35,6 @@ public class Spawning : MonoBehaviour
 
     void Spawn()
     {
-        Debug.Log("Spawning Enemy");
         GameObject enemyToSpawn = spawnables[Random.Range(0, spawnables.Length)];
 
         Vector2 spawnPoint = new Vector2(Random.Range(xRange.x, xRange.y),
