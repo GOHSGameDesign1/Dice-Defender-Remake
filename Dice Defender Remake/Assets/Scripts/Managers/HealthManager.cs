@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private int health;
+    public int health {  get; private set; }
     [SerializeField] private int maxHealth;
 
     public static HealthManager instance;
@@ -39,5 +39,10 @@ public class HealthManager : MonoBehaviour
         {
             GameManager.GetInstance().GameOver();
         }
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
     }
 }
