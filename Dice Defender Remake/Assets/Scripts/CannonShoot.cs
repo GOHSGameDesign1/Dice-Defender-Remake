@@ -9,6 +9,9 @@ public class CannonShoot : MonoBehaviour
 
     public GameObject dieProj;
 
+    public delegate void OnShoot();
+    public static event OnShoot onShoot;
+
     private void Awake()
     {
         cannonSprite = transform.GetChild(0);
@@ -29,6 +32,7 @@ public class CannonShoot : MonoBehaviour
 
     void ShootDie()
     {
+        onShoot.Invoke();
         GameObject proj = Instantiate(dieProj, cannonSprite.GetChild(0).position, Quaternion.identity);
         proj.GetComponent<ProjectileFunction>().direction = cannonSprite.right;
         proj.GetComponent<DieNumber>().setDieNumber(slot.currentDie.getDieNumber());
