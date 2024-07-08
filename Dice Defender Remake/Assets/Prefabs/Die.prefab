@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 6065898442805931137}
   - component: {fileID: 5134186029217326954}
   - component: {fileID: 1727537991594908343}
+  - component: {fileID: 3847220781446266878}
   m_Layer: 6
   m_Name: Die
   m_TagString: Untagged
@@ -400,7 +401,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8391447319888400730}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -511,3 +512,19 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fixRotateDuration: 0.3
+--- !u!58 &3847220781446266878
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391447319888400730}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.87
