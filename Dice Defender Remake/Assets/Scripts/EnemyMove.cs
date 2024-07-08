@@ -11,6 +11,8 @@ public class EnemyMove : MonoBehaviour
     public float stepTime;
     public float moveAmount;
 
+    private GameObject walkVFX;
+    public float VFXSpawnOffset;
     public Sprite[] walkSprites;
 
     private Vector2 targetPosition;
@@ -19,6 +21,7 @@ public class EnemyMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         render = transform.GetChild(1).GetComponent<SpriteRenderer>();
+        walkVFX = (GameObject)Resources.Load("Prefabs/Enemy Move VFX");
     }
 
     // Start is called before the first frame update
@@ -47,6 +50,10 @@ public class EnemyMove : MonoBehaviour
                 counter = counter % walkSprites.Length;
             }
             yield return waitTime;
+            if (walkVFX != null)
+            {
+                Instantiate(walkVFX, transform.position + Vector3.right * VFXSpawnOffset, Quaternion.identity);
+            }
             targetPosition -= new Vector2(moveAmount, 0);
         }
     }

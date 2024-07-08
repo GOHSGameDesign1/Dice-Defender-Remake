@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.0705}
+  m_AnchoredPosition: {x: 0, y: 0.05}
   m_SizeDelta: {x: 0.4383, y: 0.4278}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2161913995515831264
@@ -224,6 +224,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepTime: 1.5
   moveAmount: 0.3
+  walkVFX: {fileID: 2027823031109449172, guid: 920500a584aba7e4ca780df7a30aa5f8, type: 3}
+  VFXSpawnOffset: 0.3
   walkSprites:
   - {fileID: 21300000, guid: 6b156142593d54f4d9246fa8424f19a7, type: 3}
   - {fileID: 21300000, guid: 0e78eaa87fcb93648beb64eb83834daa, type: 3}
@@ -309,7 +311,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0032567978, y: 0.06097108}
+  m_Offset: {x: -0.0032567978, y: 0.008624688}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -320,7 +322,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5592618, y: 0.582785}
+  m_Size: {x: 0.5592618, y: 0.6055443}
   m_EdgeRadius: 0
 --- !u!1 &2161913996589414874
 GameObject:
@@ -347,7 +349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2161913996589414874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.006, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
