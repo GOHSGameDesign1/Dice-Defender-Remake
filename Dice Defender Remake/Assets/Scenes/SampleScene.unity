@@ -1053,6 +1053,31 @@ Transform:
   m_Father: {fileID: 1520828514}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &248376049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7579971913959077963, guid: a09062a04d2104640b98978a46128c86, type: 3}
+  m_PrefabInstance: {fileID: 7579971914199152586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &248376052
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248376049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d54bd3c771620d4a99f3b55c3c04f6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &259443668
 GameObject:
   m_ObjectHideFlags: 0
@@ -5981,11 +6006,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7579971914779396373, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: stepTime
-      value: 0.2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579971914779396373, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: moveAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579971915577150168, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: m_Size.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579971915577150168, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: m_Size.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579971915577150168, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7579971915577150170, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579971915577150171, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09062a04d2104640b98978a46128c86, type: 3}

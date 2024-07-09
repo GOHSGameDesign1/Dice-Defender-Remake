@@ -179,7 +179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepTime: 1.5
   moveAmount: 0.5
-  walkVFX: {fileID: 2027823031109449172, guid: 920500a584aba7e4ca780df7a30aa5f8, type: 3}
   VFXSpawnOffset: 0.3
   walkSprites:
   - {fileID: 21300000, guid: b2e398c16aa49484294c880f5cd68554, type: 3}
@@ -265,6 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7579971915577150171}
   - component: {fileID: 7579971915577150168}
+  - component: {fileID: 8097209547176144179}
   m_Layer: 0
   m_Name: Die Sprite
   m_TagString: Untagged
@@ -328,7 +328,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3570206cb5a91b04d92d35dc716da4e3, type: 3}
+  m_Sprite: {fileID: 1353711714, guid: a039b99a1bb51564e84e25460393421f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -339,3 +339,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8097209547176144179
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579971915577150170}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b04a8c583c91fc4baa222fae896b5e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
