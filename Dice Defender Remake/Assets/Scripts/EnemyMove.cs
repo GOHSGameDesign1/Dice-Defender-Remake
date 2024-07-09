@@ -15,6 +15,8 @@ public class EnemyMove : MonoBehaviour
     public float VFXSpawnOffset;
     public Sprite[] walkSprites;
 
+    private EnemyAnimation enemyAnimation;
+
     private Vector2 targetPosition;
 
     private void Awake()
@@ -22,6 +24,7 @@ public class EnemyMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         render = transform.GetChild(1).GetComponent<SpriteRenderer>();
         walkVFX = (GameObject)Resources.Load("Prefabs/Enemy Move VFX");
+        enemyAnimation = GetComponent<EnemyAnimation>();
     }
 
     // Start is called before the first frame update
@@ -53,6 +56,10 @@ public class EnemyMove : MonoBehaviour
             if (walkVFX != null)
             {
                 Instantiate(walkVFX, transform.position + Vector3.right * VFXSpawnOffset, Quaternion.identity);
+            }
+            if(enemyAnimation != null)
+            {
+                enemyAnimation.AnimateMove();
             }
             targetPosition -= new Vector2(moveAmount, 0);
         }

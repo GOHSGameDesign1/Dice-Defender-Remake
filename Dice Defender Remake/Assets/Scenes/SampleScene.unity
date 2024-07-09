@@ -2995,6 +2995,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &920436452 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8097209547176144179, guid: a09062a04d2104640b98978a46128c86, type: 3}
+  m_PrefabInstance: {fileID: 7579971914199152586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &928847538
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,6 +4964,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2017376396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7579971914779396369, guid: a09062a04d2104640b98978a46128c86, type: 3}
+  m_PrefabInstance: {fileID: 7579971914199152586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2017376404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017376396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec844faa539fce34f859e44f17f7c3e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteAnimator: {fileID: 248376052}
+  dieAnimator: {fileID: 920436452}
 --- !u!1 &2019919555
 GameObject:
   m_ObjectHideFlags: 0
@@ -5940,6 +5964,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7579971913959077960, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7579971913959077961, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_Size.x
       value: 1.6
@@ -6006,11 +6034,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7579971914779396373, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: stepTime
-      value: 10
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7579971914779396373, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: moveAmount
-      value: 0
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579971914779396375, guid: a09062a04d2104640b98978a46128c86, type: 3}
+      propertyPath: dieNumber
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7579971915577150168, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_Size.x
