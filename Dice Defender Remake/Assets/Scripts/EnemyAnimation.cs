@@ -6,25 +6,35 @@ public class EnemyAnimation : MonoBehaviour
 {
     public Animator spriteAnimator;
     public Animator dieAnimator;
+    public float VFXSpawnOffset;
+
     private DieNumber dieNumber;
+    private GameObject walkVFX;
 
     private int counter;
 
     private void Awake()
     {
         dieNumber = GetComponent<DieNumber>();
+        walkVFX = (GameObject)Resources.Load("Prefabs/Enemy Move VFX");
     }
 
     private void OnEnable()
     {
-        dieAnimator.Play(("Enemy_Die" + dieNumber.getDieNumber()), -1, 0f);
+        if (dieAnimator != null)
+        {
+            dieAnimator.Play(("Enemy_Die" + dieNumber.getDieNumber()), -1, 0f);
+        }
         counter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (dieAnimator)
+        {
+            dieAnimator.Play(("Enemy_Die" + dieNumber.getDieNumber()));
+        }
     }
 
     public void AnimateMove()
@@ -34,5 +44,10 @@ public class EnemyAnimation : MonoBehaviour
         counter++;
         counter %= 2;
         spriteAnimator.Play("Enemy_Walk" + (counter+1), -1, 0f);
+
+        if(walkVFX != null)
+        {
+            Instantiate(walkVFX, transform.position + Vector3.right * VFXSpawnOffset, Quaternion.identity);
+        }
     }
 }

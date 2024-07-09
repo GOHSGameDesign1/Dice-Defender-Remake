@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7579971913959077960}
   - component: {fileID: 7579971913959077961}
+  - component: {fileID: 5649082013987802712}
   m_Layer: 0
   m_Name: Enemy Sprite
   m_TagString: Untagged
@@ -84,6 +85,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5649082013987802712
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579971913959077963}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d54bd3c771620d4a99f3b55c3c04f6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7579971914779396369
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,9 +117,9 @@ GameObject:
   - component: {fileID: 7579971914779396375}
   - component: {fileID: 7579971914779396374}
   - component: {fileID: 7579971914779396373}
-  - component: {fileID: 7579971914779396395}
   - component: {fileID: 7579971914779396394}
   - component: {fileID: 3294617026393549240}
+  - component: {fileID: 219592920910396018}
   m_Layer: 2
   m_Name: Die Enemy
   m_TagString: Enemy
@@ -180,40 +201,6 @@ MonoBehaviour:
   stepTime: 1.5
   moveAmount: 0.5
   VFXSpawnOffset: 0.3
-  walkSprites:
-  - {fileID: 21300000, guid: b2e398c16aa49484294c880f5cd68554, type: 3}
-  - {fileID: 21300000, guid: 1cfe462702f6fc04eaef5fa2c256c54f, type: 3}
---- !u!60 &7579971914779396395
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7579971914779396369}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.11907554, y: 0.37128198}
-      - {x: -0.30400252, y: 0.0641253}
-      - {x: -0.13181776, y: -0.24349281}
-      - {x: 0.23145372, y: -0.24698126}
-      - {x: 0.3829757, y: 0.0626148}
-      - {x: 0.22707844, y: 0.36617333}
 --- !u!114 &7579971914779396394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +241,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5592618, y: 0.6007406}
   m_EdgeRadius: 0
+--- !u!114 &219592920910396018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579971914779396369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec844faa539fce34f859e44f17f7c3e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteAnimator: {fileID: 5649082013987802712}
+  dieAnimator: {fileID: 8097209547176144179}
+  VFXSpawnOffset: 0.3
 --- !u!1 &7579971915577150170
 GameObject:
   m_ObjectHideFlags: 0

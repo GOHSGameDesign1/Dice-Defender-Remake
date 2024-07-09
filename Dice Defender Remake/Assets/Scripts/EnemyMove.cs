@@ -6,14 +6,12 @@ public class EnemyMove : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    private SpriteRenderer render;
 
     public float stepTime;
     public float moveAmount;
 
     private GameObject walkVFX;
     public float VFXSpawnOffset;
-    public Sprite[] walkSprites;
 
     private EnemyAnimation enemyAnimation;
 
@@ -22,7 +20,6 @@ public class EnemyMove : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        render = transform.GetChild(1).GetComponent<SpriteRenderer>();
         walkVFX = (GameObject)Resources.Load("Prefabs/Enemy Move VFX");
         enemyAnimation = GetComponent<EnemyAnimation>();
     }
@@ -42,21 +39,10 @@ public class EnemyMove : MonoBehaviour
 
     IEnumerator StartMoving()
     {
-        int counter = 0;
         WaitForSeconds waitTime = new WaitForSeconds(stepTime);
         while (true)
         {
-            if (walkSprites.Length > 0)
-            {
-                render.sprite = walkSprites[counter];
-                counter++;
-                counter = counter % walkSprites.Length;
-            }
             yield return waitTime;
-            if (walkVFX != null)
-            {
-                Instantiate(walkVFX, transform.position + Vector3.right * VFXSpawnOffset, Quaternion.identity);
-            }
             if(enemyAnimation != null)
             {
                 enemyAnimation.AnimateMove();
