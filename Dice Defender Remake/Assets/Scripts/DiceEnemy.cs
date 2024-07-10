@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DiceEnemy : MonoBehaviour, ISpawnable
@@ -8,9 +9,12 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
     public float timerDecrease;
     public int pointsToAdd;
 
+    private GameObject tooltipVFX;
+
     private void Awake()
     {
         dieNumber = GetComponent<DieNumber>();
+        tooltipVFX = (GameObject)Resources.Load("Prefabs/Enemy Tooltip VFX");
     }
 
     public void OnSpawn()
@@ -27,6 +31,12 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
     void DeSpawn()
     {
         Destroy(gameObject);
+    }
+
+    public void SpawnTooltipVFX()
+    {
+        GameObject vfx = Instantiate(tooltipVFX, transform.position, Quaternion.identity);
+        vfx.transform.GetChild(0).GetComponent<TextMeshPro>().text = "Needs " + dieNumber.getDieNumber() + "!";
     }
 
     void UpdateManagers()
@@ -58,6 +68,9 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
                 }
 
                 Die();
+            } else
+            {
+                SpawnTooltipVFX();
             }
         }
     }
