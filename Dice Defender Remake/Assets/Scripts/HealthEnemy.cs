@@ -6,7 +6,7 @@ using TMPro;
 public class HealthEnemy : MonoBehaviour, ISpawnable
 {
 
-    private TextMeshPro m_TextMeshPro;
+    public TextMeshPro m_TextMeshPro;
 
     [SerializeField] private int maxHealth;
     public float timerDecreaseHit;
@@ -17,7 +17,7 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
 
     private void Awake()
     {
-        m_TextMeshPro = transform.GetChild(0).GetComponent<TextMeshPro>();
+        //m_TextMeshPro = transform.GetChild(0).GetComponent<TextMeshPro>();
     }
 
     public void OnSpawn()

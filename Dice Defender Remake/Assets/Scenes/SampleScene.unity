@@ -5663,10 +5663,6 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 32
       objectReference: {fileID: 0}
-    - target: {fileID: 2161913995515831278, guid: a58c8319f892f0345be84877ef8c16d2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2161913996093847449, guid: a58c8319f892f0345be84877ef8c16d2, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -5845,6 +5841,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point VFX
       objectReference: {fileID: 0}
+    - target: {fileID: 4316586327187674558, guid: 1b0ec1251662f4040939ad45144cb93d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316586327308992295, guid: 1b0ec1251662f4040939ad45144cb93d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0ec1251662f4040939ad45144cb93d, type: 3}
 --- !u!1001 &7352443718332846560
@@ -6006,14 +6010,6 @@ PrefabInstance:
     - target: {fileID: 7579971915577150170, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_Layer
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7579971915577150171, guid: a09062a04d2104640b98978a46128c86, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7579971915577150171, guid: a09062a04d2104640b98978a46128c86, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09062a04d2104640b98978a46128c86, type: 3}
