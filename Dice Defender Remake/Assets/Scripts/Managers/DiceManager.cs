@@ -80,17 +80,19 @@ public class DiceManager : MonoBehaviour
     {
         while(true)
         {
-            spawnTimer = spawnWaitTime;
-            StartCoroutine(SpawnDice());
+            if (numberOfDice == 0)
+            {
+                spawnTimer = spawnWaitTime;
+                StartCoroutine(SpawnDice());
+            }
             while (spawnTimer > 0)
             {
                 yield return null;
-                if (numberOfDice >= maxDice)
-                {
-                    spawnTimer = spawnWaitTime;
-                    continue;
-                }
                 spawnTimer -= Time.deltaTime;
+            }
+            if(spawnTimer <= 0)
+            {
+                yield return null;
             }
         }
     }
