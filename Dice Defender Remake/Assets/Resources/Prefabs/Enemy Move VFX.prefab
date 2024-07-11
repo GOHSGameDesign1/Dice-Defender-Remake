@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2027823031109449169}
   - component: {fileID: 2027823031109449174}
   - component: {fileID: 2027823031109449175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Move VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
