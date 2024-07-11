@@ -1034,7 +1034,7 @@ MonoBehaviour:
   diePrefab: {fileID: 8391447319888400730, guid: 822317094d9964244b2af5c988a05a15, type: 3}
   diceSpawnPoints: {fileID: 1760724903}
   maxDice: 3
-  spawnWaitTime: 12
+  spawnWaitTime: 1
   spawnMinimumDecreaseTime: 0
   spawnTimer: 0
   spawnPoint: {x: -2.1, y: -3.6}
@@ -5545,6 +5545,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 240931168761486471, guid: 4498d9cd5e4c31e4b9efe2f70310c553, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 240931170467752536, guid: 4498d9cd5e4c31e4b9efe2f70310c553, type: 3}
       propertyPath: m_Name
       value: Die Projectile
@@ -5555,11 +5559,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 240931170467752541, guid: 4498d9cd5e4c31e4b9efe2f70310c553, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.32
+      value: -3.973
       objectReference: {fileID: 0}
     - target: {fileID: 240931170467752541, guid: 4498d9cd5e4c31e4b9efe2f70310c553, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.41
+      value: -2.076
       objectReference: {fileID: 0}
     - target: {fileID: 240931170467752541, guid: 4498d9cd5e4c31e4b9efe2f70310c553, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5592,6 +5596,10 @@ PrefabInstance:
     - target: {fileID: 240931170467752541, guid: 4498d9cd5e4c31e4b9efe2f70310c553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 240931170467752542, guid: 4498d9cd5e4c31e4b9efe2f70310c553, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4498d9cd5e4c31e4b9efe2f70310c553, type: 3}
@@ -5994,11 +6002,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7579971914779396372, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.06
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: 7579971914779396372, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.83
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 7579971914779396372, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: m_LocalPosition.z
