@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     private bool paused;
 
+    public ShopStats stats;
+
     private void Awake()
     {
         if(Instance != null)
@@ -27,7 +30,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-
+        DontDestroyOnLoad(gameObject);
         paused = false;
     }
 
