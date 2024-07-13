@@ -30,6 +30,13 @@ public class DiceManager : MonoBehaviour
         }
         instance = this;
 
+        
+    }
+
+    private void Start()
+    {
+        maxDice += GameManager.GetInstance().stats.additionalDice;
+        spawnWaitTime -= GameManager.GetInstance().stats.timerDecrease;
         StartCoroutine(StartSpawningDice());
     }
 
@@ -80,7 +87,7 @@ public class DiceManager : MonoBehaviour
     {
         while(true)
         {
-            if (numberOfDice == 0)
+            if (numberOfDice < maxDice/*numberOfDice <= Mathf.Clamp((maxDice - 3), 0, 999)*/)
             {
                 spawnTimer = spawnWaitTime;
                 StartCoroutine(SpawnDice());

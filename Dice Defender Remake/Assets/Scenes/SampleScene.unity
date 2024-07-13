@@ -1034,8 +1034,8 @@ MonoBehaviour:
   diePrefab: {fileID: 8391447319888400730, guid: 822317094d9964244b2af5c988a05a15, type: 3}
   diceSpawnPoints: {fileID: 1760724903}
   maxDice: 3
-  spawnWaitTime: 1
-  spawnMinimumDecreaseTime: 0
+  spawnWaitTime: 12
+  spawnMinimumDecreaseTime: 0.7
   spawnTimer: 0
   spawnPoint: {x: -2.1, y: -3.6}
 --- !u!4 &247999989
@@ -1591,7 +1591,6 @@ GameObject:
   m_Component:
   - component: {fileID: 366442225}
   - component: {fileID: 366442227}
-  - component: {fileID: 366442226}
   m_Layer: 0
   m_Name: Camera (1)
   m_TagString: Untagged
@@ -1614,14 +1613,6 @@ Transform:
   m_Father: {fileID: 519420032}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &366442226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 366442224}
-  m_Enabled: 1
 --- !u!20 &366442227
 Camera:
   m_ObjectHideFlags: 0
@@ -3414,6 +3405,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12674443dfc76c4ab6cd513d292c3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    timerDecrease: 0
+    additionalDice: 1
+    spawnExplodePower: 0
 --- !u!1 &1272071660
 GameObject:
   m_ObjectHideFlags: 0
