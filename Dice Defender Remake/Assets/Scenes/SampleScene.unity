@@ -6269,7 +6269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7579971914779396373, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: stepTime
-      value: 1.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7579971914779396373, guid: a09062a04d2104640b98978a46128c86, type: 3}
       propertyPath: moveAmount
