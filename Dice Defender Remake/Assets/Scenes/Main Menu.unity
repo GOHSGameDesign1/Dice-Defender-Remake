@@ -2146,6 +2146,10 @@ MonoBehaviour:
   scrollAmount: 3
   selectItemDialogue:
   - Waiting SUCKS!!! Lets fix that.
+  buyItemDialogue:
+  - A guanchilicious purchase!!
+  - money... MONEY!!!!
+  - Enjoy my friend!!! Kill those bots!!!
 --- !u!1 &977091760
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,6 @@ public class InfoTextDesc : MonoBehaviour
 
     void ChangeText(ShopManager.Item item)
     {
-        Debug.Log("Called");
         switch (item)
         {
             case (ShopManager.Item.DecreaseTimer1):

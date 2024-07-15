@@ -14,6 +14,9 @@ public class WizardDialogue : MonoBehaviour
     [TextArea(5, 5)]
     [SerializeField] private string[] selectItemDialogue;
 
+    [TextArea(5, 5)]
+    [SerializeField] private string[] buyItemDialogue;
+
     private void Awake()
     {
         tmp = GetComponent<TextMeshProUGUI>();
@@ -44,6 +47,15 @@ public class WizardDialogue : MonoBehaviour
         StartCoroutine(ScrollText(chosenText));
     }
 
+    void StartBuyText()
+    {
+        if (buyItemDialogue.Length <= 0) return;
+
+        int index = Random.Range(0, buyItemDialogue.Length);
+
+        StartCoroutine(ScrollText(buyItemDialogue[index]));
+    }
+
     IEnumerator ScrollText(string targetText)
     {
         ClearText();
@@ -69,10 +81,12 @@ public class WizardDialogue : MonoBehaviour
     private void OnEnable()
     {
         ShopManager.onSelectItem += StartSelectText;
+        ShopManager.onBuyItem += StartBuyText;
     }
 
     private void OnDisable()
     {
         ShopManager.onSelectItem -= StartSelectText;
+        ShopManager.onBuyItem -= StartBuyText;
     }
 }

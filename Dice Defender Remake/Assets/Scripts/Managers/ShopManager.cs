@@ -44,6 +44,7 @@ public class ShopManager : MonoBehaviour
     {
         DisablePurchasedItems();
         selectedItemIndex = -1;
+        selectedTransform = null;
     }
 
 
@@ -66,6 +67,10 @@ public class ShopManager : MonoBehaviour
 
     public void BuyItem()
     {
+        if(selectedItemIndex < 0)
+        {
+            return;
+        }
         AddDisabledItem(selectedTransform);
         onBuyItem();
         DisablePurchasedItems();
@@ -83,16 +88,20 @@ public class ShopManager : MonoBehaviour
             default:
                 break;
         }
+        selectedItemIndex = -1;
+        selectedTransform = null;
     }
 
     public void AddDisabledItem(Transform item)
     {
+        if (item == null) return;
         boughtItems.Add(item);
         DisablePurchasedItems();
     }
 
     void DisablePurchasedItems()
     {
+        if (boughtItems.Count <= 0) return;
         foreach(Transform item in boughtItems)
         {
             item.gameObject.SetActive(false);
