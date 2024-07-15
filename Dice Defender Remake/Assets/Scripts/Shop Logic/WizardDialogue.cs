@@ -8,9 +8,16 @@ public class WizardDialogue : MonoBehaviour
 
     private TextMeshProUGUI tmp;
 
+    [SerializeField] private float scrollDelta; // Delta between two different scrolls
+    [SerializeField] private int scrollAmount; // How many characters scrolled through
+
+    [TextArea(5, 5)]
+    [SerializeField] private string[] selectItemDialogue;
+
     private void Awake()
     {
         tmp = GetComponent<TextMeshProUGUI>();
+        scrollAmount = Mathf.Clamp(scrollAmount, 1, 200);
     }
 
     // Start is called before the first frame update
@@ -29,22 +36,28 @@ public class WizardDialogue : MonoBehaviour
     {
         string chosenText = "";
 
-        switch(item)
+        if ((int)item < selectItemDialogue.Length)
         {
-            default:
-                break;
+            chosenText = selectItemDialogue[(int)item];
         }
+        StopAllCoroutines();
+        StartCoroutine(ScrollText(chosenText));
     }
 
     IEnumerator ScrollText(string targetText)
     {
         ClearText();
         char[] chars = targetText.ToCharArray();
+        WaitForSeconds waitTime = new WaitForSeconds(scrollDelta);
 
-        foreach (char c in chars)
+        for(int i = 0; i < chars.Length; i += scrollAmount)
         {
-            tmp.text += c;
-            yield return null;
+            for(int j  = 0; j < scrollAmount; j++)
+            {
+                if (i + j >= chars.Length) break;
+                tmp.text += chars[i + j];
+            }
+            yield return waitTime;
         }
     }
 
@@ -55,11 +68,11 @@ public class WizardDialogue : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        ShopManager.onSelectItem += StartSelectText;
     }
 
     private void OnDisable()
     {
-        
+        ShopManager.onSelectItem -= StartSelectText;
     }
 }
