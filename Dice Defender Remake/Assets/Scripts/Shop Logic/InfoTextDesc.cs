@@ -7,6 +7,7 @@ public class InfoTextDesc : MonoBehaviour
 {
     private TextMeshProUGUI tmp;
 
+    [TextArea(3, 3)]
     public string[] strings;
 
     private void Awake()
