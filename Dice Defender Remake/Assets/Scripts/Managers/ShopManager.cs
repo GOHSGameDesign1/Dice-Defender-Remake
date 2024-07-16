@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class ShopManager : MonoBehaviour
@@ -10,7 +11,7 @@ public class ShopManager : MonoBehaviour
     public List<Transform> boughtItems;
 
     private int selectedItemIndex;
-    private Transform selectedTransform;
+    public Transform selectedTransform { get; private set; }
 
     public delegate void OnSelectItem(Item item);
     public static event OnSelectItem onSelectItem;
@@ -61,7 +62,18 @@ public class ShopManager : MonoBehaviour
     {
         if(selectedTransform != transform)
         {
+            if (selectedTransform != null)
+            {
+                if (selectedTransform.TryGetComponent(out Image img))
+                {
+                    img.color = Color.white;
+                }
+            }
             selectedTransform = transform;
+            if (selectedTransform.TryGetComponent(out Image newImg))
+            {
+                newImg.color = Color.yellow;
+            }
         }
     }
 
