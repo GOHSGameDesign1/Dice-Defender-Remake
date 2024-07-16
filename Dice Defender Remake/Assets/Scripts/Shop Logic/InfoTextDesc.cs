@@ -7,6 +7,8 @@ public class InfoTextDesc : MonoBehaviour
 {
     private TextMeshProUGUI tmp;
 
+    public string[] strings;
+
     private void Awake()
     {
         tmp = GetComponent<TextMeshProUGUI>();
@@ -21,13 +23,9 @@ public class InfoTextDesc : MonoBehaviour
 
     void ChangeText(ShopManager.Item item)
     {
-        switch (item)
+        if((int)item < strings.Length)
         {
-            case (ShopManager.Item.DecreaseTimer1):
-                tmp.text = "Decrease dice refresh timer by 2 seconds.";
-                break;
-            default:
-                break;
+            tmp.text = strings[(int)item];
         }
     }
 
