@@ -1118,7 +1118,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diePrefab: {fileID: 8391447319888400730, guid: 822317094d9964244b2af5c988a05a15, type: 3}
   timerDecrease: 4.5
-  pointsToAdd: 200
 --- !u!1 &305701492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1853,13 @@ MonoBehaviour:
   maxCombo: 10
   comboMaxTimerLength: 6
   comboCurrentTimerLength: 0
+  pointValues: c80000005e010000c800000032000000fa000000
+  values:
+    add: 200
+    minus: 350
+    dieEnemy: 100
+    HealthEnemyHit: 50
+    HealthEnemyKill: 100
 --- !u!1 &464238193
 GameObject:
   m_ObjectHideFlags: 0

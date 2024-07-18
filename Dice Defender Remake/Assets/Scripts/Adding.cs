@@ -10,7 +10,6 @@ public class Adding : MonoBehaviour
     public GameObject diePrefab;
 
     public float timerDecrease;
-    public int pointsToAdd;
 
     private void Awake()
     {
@@ -52,8 +51,8 @@ public class Adding : MonoBehaviour
     void UpdateManagers()
     {
         PointsManager.GetInstance().UpdateCombo(true);
-        PointsManager.GetInstance().AddPoints(pointsToAdd);
-        PointsManager.GetInstance().SpawnPointVFX(pointsToAdd, transform.position);
+        PointsManager.GetInstance().AddPoints(PointsManager.PointSpawns.Add);
+        PointsManager.GetInstance().SpawnPointVFX(PointsManager.PointSpawns.Add, transform.position);
         DiceManager.GetInstance().DecreaseTimer(timerDecrease);
     }
 

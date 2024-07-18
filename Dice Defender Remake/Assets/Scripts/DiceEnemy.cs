@@ -7,7 +7,6 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
 {
     private DieNumber dieNumber;
     public float timerDecrease;
-    public int pointsToAdd;
 
     private GameObject tooltipVFX;
 
@@ -42,8 +41,8 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
     void UpdateManagers()
     {
         PointsManager.GetInstance().UpdateCombo(false);
-        PointsManager.GetInstance().AddPoints(pointsToAdd);
-        PointsManager.GetInstance().SpawnPointVFX(pointsToAdd, transform.position);
+        PointsManager.GetInstance().AddPoints(PointsManager.PointSpawns.DieEnemy);
+        PointsManager.GetInstance().SpawnPointVFX(PointsManager.PointSpawns.DieEnemy, transform.position);
         DiceManager.GetInstance().DecreaseTimer(timerDecrease);
     }
 

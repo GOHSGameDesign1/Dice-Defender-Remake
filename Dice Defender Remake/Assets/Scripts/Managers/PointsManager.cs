@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+using Random = UnityEngine.Random;
 
 public class PointsManager : MonoBehaviour
 {
@@ -15,6 +17,27 @@ public class PointsManager : MonoBehaviour
     public int currentCombo { get; private set; }
     [SerializeField] private float comboMaxTimerLength;
     [SerializeField] private float comboCurrentTimerLength;
+
+    public enum PointSpawns
+    {
+        Add,
+        Minus,
+        DieEnemy,
+        HealthEnemyHit,
+        HealthEnemyKill
+    }
+
+    [Serializable]
+    public struct VALUES
+    {
+        public int add;
+        public int minus;
+        public int dieEnemy;
+        public int HealthEnemyHit;
+        public int HealthEnemyKill;
+    }
+
+    [SerializeField] private VALUES values;
 
     //TODO Make ComboUpdate an Event for UI top respond
 
@@ -34,8 +57,9 @@ public class PointsManager : MonoBehaviour
            return instance;
     }
 
-    public void AddPoints(int pointsToAdd)
+    public void AddPoints(PointSpawns pointSpawns)
     {
+        int pointsToAdd = findPointValue(pointSpawns);
         int add = (currentCombo > 0) ? (pointsToAdd * currentCombo) : pointsToAdd;
         Debug.Log(add);
         points += add;
@@ -48,18 +72,19 @@ public class PointsManager : MonoBehaviour
         points = 0;
     }
 
-    public void SpawnPointVFX(int points, Vector2 position)
+    public void SpawnPointVFX(PointSpawns pointSpawns, Vector2 position)
     {
+        int textPoints = findPointValue(pointSpawns);
         GameObject text = Instantiate(pointPrefab, position, Quaternion.Euler(0, 0, Random.Range(-10f, 10f)));
 
         if(currentCombo > 0)
         {
-            points *= currentCombo;
+            textPoints *= currentCombo;
         }
 
         if(text.transform.GetChild(0).TryGetComponent(out TextMeshPro tmp))
         {
-            tmp.text = "+" + points.ToString();
+            tmp.text = "+" + textPoints.ToString();
         }
     }
 
@@ -77,6 +102,25 @@ public class PointsManager : MonoBehaviour
         {
             comboCurrentTimerLength = comboMaxTimerLength;
             StartCoroutine(ComboTimer());
+        }
+    }
+
+    int findPointValue(PointSpawns pointSpawns)
+    {
+        switch ((int)pointSpawns)
+        {
+            case 0:
+                return values.add;
+            case 1:
+                return values.minus;
+            case 2:
+                return values.dieEnemy;
+            case 3:
+                return values.HealthEnemyHit;
+            case 4:
+                return values.HealthEnemyKill;
+            default:
+                return -1;
         }
     }
 
