@@ -92,11 +92,11 @@ public class ShopManager : MonoBehaviour
                 GameManager.GetInstance().stats.timerDecrease += 2;
                 Debug.Log("Decreased Timer Length");
                 break;
-            case Item.AddSubTimerDecrease: // Adding/Subtracting decreases timer more
-                break;
             case Item.ExplodePowerup: // Powerup 
                 break;
-
+            case Item.AddSubTimerDecrease: // Adding/Subtracting decreases timer more
+                GameManager.GetInstance().stats.addSubtractDeacrease += 2;
+                break;
             default:
                 break;
         }

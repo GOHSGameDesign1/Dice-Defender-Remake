@@ -1052,6 +1052,12 @@ MonoBehaviour:
   spawnMinimumDecreaseTime: 0.7
   spawnTimer: 0
   spawnPoint: {x: -2.1, y: -3.6}
+  values:
+    add: 4
+    minus: 4
+    dieEnemy: 3
+    HealthEnemyHit: 0
+    HealthEnemyKill: 3
 --- !u!4 &247999989
 Transform:
   m_ObjectHideFlags: 0
@@ -1853,7 +1859,6 @@ MonoBehaviour:
   maxCombo: 10
   comboMaxTimerLength: 6
   comboCurrentTimerLength: 0
-  pointValues: c80000005e010000c800000032000000fa000000
   values:
     add: 200
     minus: 350

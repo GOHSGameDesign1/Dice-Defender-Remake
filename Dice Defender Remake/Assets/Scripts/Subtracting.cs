@@ -51,7 +51,7 @@ public class Subtracting : MonoBehaviour
         PointsManager.GetInstance().UpdateCombo(true);
         PointsManager.GetInstance().AddPoints(PointsManager.PointSpawns.Minus);
         PointsManager.GetInstance().SpawnPointVFX(PointsManager.PointSpawns.Minus, transform.position);
-        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
+        DiceManager.GetInstance().DecreaseTimer(DiceManager.TimerSpawns.Minus);
     }
 
     bool SlotsAreFull()

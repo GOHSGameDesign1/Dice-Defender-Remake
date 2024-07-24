@@ -56,7 +56,7 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
             {
                 PointsManager.GetInstance().AddPoints(PointsManager.PointSpawns.HealthEnemyHit);
                 PointsManager.GetInstance().SpawnPointVFX(PointsManager.PointSpawns.HealthEnemyHit, transform.position);
-                DiceManager.GetInstance().DecreaseTimer(timerDecreaseHit);
+                DiceManager.GetInstance().DecreaseTimer(DiceManager.TimerSpawns.HealthEnemyHit);
             }
         }
 
@@ -71,7 +71,7 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
         PointsManager.GetInstance().UpdateCombo(false);
         PointsManager.GetInstance().AddPoints(PointsManager.PointSpawns.HealthEnemyKill);
         PointsManager.GetInstance().SpawnPointVFX(PointsManager.PointSpawns.HealthEnemyKill, transform.position);
-        DiceManager.GetInstance().DecreaseTimer(timerDecreaseDeath);
+        DiceManager.GetInstance().DecreaseTimer(DiceManager.TimerSpawns.HealthEnemyKill);
         Destroy(gameObject);
     }
 

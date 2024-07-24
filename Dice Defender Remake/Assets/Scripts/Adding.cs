@@ -53,7 +53,7 @@ public class Adding : MonoBehaviour
         PointsManager.GetInstance().UpdateCombo(true);
         PointsManager.GetInstance().AddPoints(PointsManager.PointSpawns.Add);
         PointsManager.GetInstance().SpawnPointVFX(PointsManager.PointSpawns.Add, transform.position);
-        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
+        DiceManager.GetInstance().DecreaseTimer(DiceManager.TimerSpawns.Add);
     }
 
     bool SlotsAreFull()

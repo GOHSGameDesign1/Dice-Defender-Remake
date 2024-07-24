@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static PointsManager;
 using Random = UnityEngine.Random;
 
 public class DiceManager : MonoBehaviour
@@ -21,6 +22,27 @@ public class DiceManager : MonoBehaviour
 
     public Vector2 spawnPoint;
 
+    public enum TimerSpawns
+    {
+        Add,
+        Minus,
+        DieEnemy,
+        HealthEnemyHit,
+        HealthEnemyKill
+    }
+
+    [Serializable]
+    public struct VALUES
+    {
+        public float add;
+        public float minus;
+        public float dieEnemy;
+        public float HealthEnemyHit;
+        public float HealthEnemyKill;
+    }
+
+    [SerializeField] private VALUES values;
+
     private void Awake()
     {
         if(instance != null)
@@ -35,6 +57,8 @@ public class DiceManager : MonoBehaviour
 
     private void Start()
     {
+        values.add += GameManager.GetInstance().stats.addSubtractDeacrease;
+        values.minus += GameManager.GetInstance().stats.addSubtractDeacrease;
         maxDice += GameManager.GetInstance().stats.additionalDice;
         spawnWaitTime -= GameManager.GetInstance().stats.timerDecrease;
         StartCoroutine(StartSpawningDice());
@@ -74,12 +98,33 @@ public class DiceManager : MonoBehaviour
         return spawnTimer;
     }
 
-    public void DecreaseTimer(float timeToDecrease)
+    public void DecreaseTimer(TimerSpawns timer)
     {
+        float timeToDecrease = FindTimeToDecrease(timer);
+
         if(spawnTimer > spawnMinimumDecreaseTime)
         {
             spawnTimer -= timeToDecrease;
             spawnTimer = Mathf.Clamp(spawnTimer, spawnMinimumDecreaseTime, 999);
+        }
+    }
+
+    float FindTimeToDecrease(TimerSpawns timer)
+    {
+        switch ((int)timer)
+        {
+            case 0:
+                return values.add;
+            case 1:
+                return values.minus;
+            case 2:
+                return values.dieEnemy;
+            case 3:
+                return values.HealthEnemyHit;
+            case 4:
+                return values.HealthEnemyKill;
+            default:
+                return -1;
         }
     }
 

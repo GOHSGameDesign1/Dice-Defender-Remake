@@ -43,7 +43,7 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
         PointsManager.GetInstance().UpdateCombo(false);
         PointsManager.GetInstance().AddPoints(PointsManager.PointSpawns.DieEnemy);
         PointsManager.GetInstance().SpawnPointVFX(PointsManager.PointSpawns.DieEnemy, transform.position);
-        DiceManager.GetInstance().DecreaseTimer(timerDecrease);
+        DiceManager.GetInstance().DecreaseTimer(DiceManager.TimerSpawns.DieEnemy);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
