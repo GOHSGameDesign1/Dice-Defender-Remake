@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class InfoTextDesc : MonoBehaviour
+public class ItemTitleText : MonoBehaviour
 {
     private TextMeshProUGUI tmp;
 
@@ -24,7 +24,7 @@ public class InfoTextDesc : MonoBehaviour
 
     void ChangeText(Item item)
     {
-        tmp.text = item.Description;
+        tmp.text = item.Title;
     }
 
     void ClearText()

@@ -11,6 +11,7 @@ public class ShopManager : MonoBehaviour
     public List<Transform> boughtItems;
 
     private int selectedItemIndex;
+    public Item selectedItem {  get; private set; }
     public Transform selectedTransform { get; private set; }
 
     public delegate void OnSelectItem(Item item);
@@ -19,7 +20,7 @@ public class ShopManager : MonoBehaviour
     public delegate void OnBuyItem();
     public static event OnBuyItem onBuyItem;
 
-    public enum Item
+    public enum ItemFunc
     {
         DecreaseTimer1,
         AddSubTimerDecrease,
@@ -48,14 +49,16 @@ public class ShopManager : MonoBehaviour
         selectedTransform = null;
     }
 
-
-    public void SelectItem(int item)
+    public void SelectItem(Item item)
     {
-        if (selectedItemIndex != item)
+        if(selectedItem != null)
         {
-            selectedItemIndex = item;
-            onSelectItem((Item)selectedItemIndex);
+            if (selectedItem == item) return;
         }
+
+        selectedItem = item;
+        onSelectItem(selectedItem);
+
     }
 
     public void SelectItemTransform(Transform transform)
@@ -79,23 +82,25 @@ public class ShopManager : MonoBehaviour
 
     public void BuyItem()
     {
-        if(selectedItemIndex < 0)
+        if(selectedItem == null)
         {
             return;
         }
         AddDisabledItem(selectedTransform);
         onBuyItem();
         DisablePurchasedItems();
-        switch ((Item)selectedItemIndex)
+        switch (selectedItem.func)
         {
-            case Item.DecreaseTimer1: // Decrease Dice Timer
+            case ItemFunc.DecreaseTimer1: // Decrease Dice Timer
                 GameManager.GetInstance().stats.timerDecrease += 2;
                 Debug.Log("Decreased Timer Length");
                 break;
-            case Item.ExplodePowerup: // Powerup 
+            case ItemFunc.ExplodePowerup: // Powerup 
+                Debug.Log("Bought PowerUp");
                 break;
-            case Item.AddSubTimerDecrease: // Adding/Subtracting decreases timer more
+            case ItemFunc.AddSubTimerDecrease: // Adding/Subtracting decreases timer more
                 GameManager.GetInstance().stats.addSubtractDeacrease += 2;
+                Debug.Log("Bought Cooler Math");
                 break;
             default:
                 break;

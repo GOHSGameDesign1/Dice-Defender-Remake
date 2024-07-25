@@ -19,7 +19,7 @@ public class ShopButtonSelect : MonoBehaviour
         img.color = Color.white;
     }
 
-    void CheckForSelect(ShopManager.Item item)
+    void CheckForSelect(ShopManager.ItemFunc item)
     {
         //if(ShopManager.GetInstance().selectedTransform == transform)
         //{
@@ -30,13 +30,13 @@ public class ShopButtonSelect : MonoBehaviour
         //}
     }
 
-    private void OnEnable()
-    {
-        ShopManager.onSelectItem += CheckForSelect;
-    }
+//    private void OnEnable()
+//    {
+//        ShopManager.onSelectItem += CheckForSelect;
+//    }
 
-    private void OnDisable()
-    {
-        ShopManager.onSelectItem -= CheckForSelect;
-    }
+//    private void OnDisable()
+//    {
+//        ShopManager.onSelectItem -= CheckForSelect;
+//    }
 }

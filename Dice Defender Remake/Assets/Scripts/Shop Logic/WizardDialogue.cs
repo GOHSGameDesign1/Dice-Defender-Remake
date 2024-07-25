@@ -23,28 +23,10 @@ public class WizardDialogue : MonoBehaviour
         scrollAmount = Mathf.Clamp(scrollAmount, 1, 200);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void StartSelectText(Item item)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void StartSelectText(ShopManager.Item item)
-    {
-        string chosenText = "";
-
-        if ((int)item < selectItemDialogue.Length)
-        {
-            chosenText = selectItemDialogue[(int)item];
-        }
         StopAllCoroutines();
-        StartCoroutine(ScrollText(chosenText));
+        StartCoroutine(ScrollText(item.Dialogue));
     }
 
     void StartBuyText()
