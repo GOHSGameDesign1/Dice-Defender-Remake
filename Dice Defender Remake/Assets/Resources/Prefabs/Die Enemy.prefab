@@ -262,6 +262,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9bb893db24f49a0479d00b027faaf9c7, type: 3}
   - {fileID: 21300000, guid: 3570206cb5a91b04d92d35dc716da4e3, type: 3}
   childRenderer: {fileID: 7579971915577150168}
+  minDieNumber: 1
 --- !u!50 &7579971914779396374
 Rigidbody2D:
   serializedVersion: 4
@@ -311,7 +312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDecrease: 4.5
-  pointsToAdd: 200
 --- !u!61 &3294617026393549240
 BoxCollider2D:
   m_ObjectHideFlags: 0

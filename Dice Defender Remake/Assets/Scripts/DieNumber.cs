@@ -8,6 +8,7 @@ public class DieNumber : MonoBehaviour
 
     [SerializeField] private Sprite[] dieSprites = new Sprite[6];
     public SpriteRenderer childRenderer;
+    [Range(1,6)][SerializeField] int minDieNumber;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class DieNumber : MonoBehaviour
         if((0 < num) && (num < 7))
         {
             dieNumber = num;
+            dieNumber = Mathf.Clamp(dieNumber, minDieNumber, 6);
             if (childRenderer == null) return;
             childRenderer.sprite = dieSprites[dieNumber - 1];
         }

@@ -8,7 +8,7 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
     private DieNumber dieNumber;
     public float timerDecrease;
 
-    private GameObject tooltipVFX;
+    protected GameObject tooltipVFX;
 
     private void Awake()
     {
@@ -21,13 +21,13 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
         dieNumber.setDieNumber(Random.Range(1, 7));
     }
 
-    void Die()
+    protected void Die()
     {
         UpdateManagers();
         Destroy(gameObject);
     }
 
-    void DeSpawn()
+    protected void DeSpawn()
     {
         Destroy(gameObject);
     }
