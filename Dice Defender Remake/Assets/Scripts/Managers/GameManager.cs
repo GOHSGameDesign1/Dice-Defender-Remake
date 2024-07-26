@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over!!!");
+        stats.storedMoney += (int)PointsManager.GetInstance().money;
         onDeath.Invoke();
     }
 

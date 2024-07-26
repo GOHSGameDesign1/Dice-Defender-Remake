@@ -86,9 +86,19 @@ public class ShopManager : MonoBehaviour
         {
             return;
         }
+
+        if(GameManager.GetInstance().stats.storedMoney < selectedItem.price)
+        {
+            Debug.Log("Not Enough Money!!");
+            return;
+        }
+
         AddDisabledItem(selectedTransform);
         onBuyItem();
         DisablePurchasedItems();
+
+        GameManager.GetInstance().stats.storedMoney -= selectedItem.price;
+
         switch (selectedItem.func)
         {
             case ItemFunc.DecreaseTimer1: // Decrease Dice Timer

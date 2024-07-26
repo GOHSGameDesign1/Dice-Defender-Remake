@@ -10,6 +10,7 @@ public class PointsManager : MonoBehaviour
     public static PointsManager instance;
 
     public int points {  get; private set; }
+    public float money { get; private set; }
 
     [SerializeField] private GameObject pointPrefab;
 
@@ -63,6 +64,12 @@ public class PointsManager : MonoBehaviour
         int add = (currentCombo > 0) ? (pointsToAdd * currentCombo) : pointsToAdd;
         Debug.Log(add);
         points += add;
+        AddMoney(add / 100f);
+    }
+
+    public void AddMoney(float addAmount)
+    {
+        money += addAmount;
     }
 
     // Start is called before the first frame update

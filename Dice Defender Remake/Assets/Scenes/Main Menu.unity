@@ -1500,7 +1500,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 198432555}
         m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
-        m_MethodName: SelectItemTest
+        m_MethodName: SelectItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 5486a0eebfe010f43a1e8cc089864339, type: 2}
@@ -3138,7 +3138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollDelta: 0.05
-  scrollAmount: 2
+  scrollAmount: 4
   selectItemDialogue:
   - Waiting for dice is LAME and SUCKS!!! Lets fix that!!!
   - You know what else kills evil dice robots...? EXPLOSIONS!!!
@@ -3212,6 +3212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    storedMoney: 2000
     timerDecrease: 0
     addSubtractDeacrease: 0
     additionalDice: 0
@@ -3499,7 +3500,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 198432555}
         m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
-        m_MethodName: SelectItemTest
+        m_MethodName: SelectItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 497b82a80a54d5740884daf7664cd204, type: 2}
@@ -6120,7 +6121,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 198432555}
         m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
-        m_MethodName: SelectItemTest
+        m_MethodName: SelectItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: ac3529c5ba899444098430c7a8eb5ee9, type: 2}

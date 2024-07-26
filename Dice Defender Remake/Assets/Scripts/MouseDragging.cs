@@ -80,6 +80,7 @@ public class MouseDragging : MonoBehaviour
     private void OnEnable()
     {
         GameManager.onPause += DisableSendRaycast;
+        GameManager.onDeath += DisableSendRaycast;
         GameManager.onUnPause += EnableSendRaycast;
     }
 
@@ -87,5 +88,6 @@ public class MouseDragging : MonoBehaviour
     {
         GameManager.onPause -= DisableSendRaycast;
         GameManager.onUnPause -= EnableSendRaycast;
+        GameManager.onDeath -= DisableSendRaycast;
     }
 }

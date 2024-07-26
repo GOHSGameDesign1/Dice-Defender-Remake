@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ShopStats
 {
+    public int storedMoney;
     public float timerDecrease;
     public float addSubtractDeacrease;
     public int additionalDice;

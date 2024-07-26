@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e403419968dc1745a7240586a77c94e, type: 3}
   m_Name: Cool Math
   m_EditorClassIdentifier: 
-  func: 0
+  func: 1
   price: 500
   Title: Cool Math
   Description: Adding and subtracting decrease the dice timer more.
