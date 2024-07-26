@@ -6802,6 +6802,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death Points VFX
       objectReference: {fileID: 0}
+    - target: {fileID: 8740413704938805670, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de0807bc752f1d648a4c1ef86e94ea03, type: 3}
 --- !u!1001 &9145055026554578046
