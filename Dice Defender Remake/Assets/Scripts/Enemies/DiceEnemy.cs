@@ -21,6 +21,11 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
         dieNumber.setDieNumber(Random.Range(1, 7));
     }
 
+    public void OnSplit(int num)
+    {
+        dieNumber.setDieNumber(num);
+    }
+
     protected void Die()
     {
         UpdateManagers();
