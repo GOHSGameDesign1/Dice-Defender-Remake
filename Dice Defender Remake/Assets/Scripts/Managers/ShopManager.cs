@@ -115,7 +115,7 @@ public class ShopManager : MonoBehaviour
             default:
                 break;
         }
-        selectedItemIndex = -1;
+        selectedItem = null;
         selectedTransform = null;
     }
 
