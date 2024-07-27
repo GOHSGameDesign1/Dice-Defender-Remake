@@ -3647,9 +3647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     storedMoney: 0
-    timerDecrease: 0
+    timerDecrease: 2
     addSubtractDeacrease: 0
-    additionalDice: 1
+    additionalDice: 0
     spawnExplodePower: 0
 --- !u!1 &1272071660
 GameObject:
@@ -5099,6 +5099,7 @@ MonoBehaviour:
   - {fileID: 7579971914779396369, guid: a09062a04d2104640b98978a46128c86, type: 3}
   - {fileID: 2161913996093847524, guid: a58c8319f892f0345be84877ef8c16d2, type: 3}
   - {fileID: 6983229569239455442, guid: aaff3c7d4f099724f8ed89b121bf25ab, type: 3}
+  - {fileID: 8709546083956985305, guid: d1c0ab944572acb47918bb699425d38c, type: 3}
 --- !u!1 &1937529093 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5480036455899410982, guid: 822317094d9964244b2af5c988a05a15, type: 3}
@@ -6104,6 +6105,10 @@ PrefabInstance:
     - target: {fileID: 8709546083956985308, guid: d1c0ab944572acb47918bb699425d38c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709546083956985311, guid: d1c0ab944572acb47918bb699425d38c, type: 3}
+      propertyPath: dieNumber
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1c0ab944572acb47918bb699425d38c, type: 3}
