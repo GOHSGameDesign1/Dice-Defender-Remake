@@ -17,12 +17,12 @@ public class SplitEnemyLogic : MonoBehaviour
     {
         int num1 = 0;
         int num2 = 0;
-        if(dieNumber.getDieNumber() % 2 == 1)
+
+        num1 = dieNumber.getDieNumber() / 2;
+        num2 = dieNumber.getDieNumber() / 2;
+        if (dieNumber.getDieNumber() % 2 == 1)
         {
-            num1 = dieNumber.getDieNumber()/2;
-            Debug.Log("Num 1: " + num1);
-            num2 = dieNumber.getDieNumber()/2 + 1;
-            Debug.Log("Num 2: " + num2);
+            num2 = num1 + 1;
         }
 
         GameObject spawnedEnemy = Instantiate(dieEnemyPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
