@@ -57,7 +57,6 @@ public class DiceDrag : MonoBehaviour, IDraggable
         currentSlot = null;
 
         Slot[] slots = GetCloseSlots();
-        Debug.Log(slots.Length);
         
 
         if (slots.Length == 1)
@@ -77,7 +76,6 @@ public class DiceDrag : MonoBehaviour, IDraggable
     Slot[] GetCloseSlots()
     {
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 0.87f);
-        Debug.Log("cols: " + cols.Length);
         List<Slot> slots = new List<Slot>();
         foreach (Collider2D col in cols)
         {

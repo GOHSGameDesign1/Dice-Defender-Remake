@@ -84,7 +84,6 @@ public class MouseDragging : MonoBehaviour
                 switch (action)
                 {
                     case (MouseActions.LmB):
-                        Debug.Log("Left");
                         currentlyDraggingObject = draggable;
                         currentlyDraggingObject.OnClick();
                         break;
@@ -96,7 +95,6 @@ public class MouseDragging : MonoBehaviour
                         }
                         break;
                     case (MouseActions.ShiftLeft):
-                        Debug.Log("Shift Left");
                         if(addSlot1.currentDie == null)
                         {
                             hit.transform.position = addSlot1.transform.position;
@@ -110,7 +108,6 @@ public class MouseDragging : MonoBehaviour
                         onMouseUp.Invoke();
                         break;
                     case (MouseActions.ShiftRight):
-                        Debug.Log("Shift Right");
                         if (minusSlot1.currentDie == null)
                         {
                             hit.transform.position = minusSlot1.transform.position;
