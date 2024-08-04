@@ -882,7 +882,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3180863159346320708, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_Name
-      value: Slot
+      value: Minus Slot 1
       objectReference: {fileID: 0}
     - target: {fileID: 3180863159346320710, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_RootOrder
@@ -2195,7 +2195,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3180863159346320708, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_Name
-      value: Slot
+      value: Cannon Slot
       objectReference: {fileID: 0}
     - target: {fileID: 3180863159346320708, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_Layer
@@ -2866,7 +2866,7 @@ GameObject:
   - component: {fileID: 797915445}
   - component: {fileID: 797915444}
   m_Layer: 3
-  m_Name: Slot (1)
+  m_Name: Add Slot 2
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3483,7 +3483,7 @@ GameObject:
   - component: {fileID: 1186954609}
   - component: {fileID: 1186954608}
   m_Layer: 3
-  m_Name: Slot (1)
+  m_Name: Minus Slot 2
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6329,7 +6329,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3180863159346320708, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_Name
-      value: Slot
+      value: Add Slot 1
       objectReference: {fileID: 0}
     - target: {fileID: 3180863159346320710, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
       propertyPath: m_RootOrder
