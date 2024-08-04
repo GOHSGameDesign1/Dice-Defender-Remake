@@ -15,7 +15,10 @@ public class MouseDragging : MonoBehaviour
     private bool canSendRaycast;
 
     public Slot cannonSlot;
-
+    public Slot addSlot1;
+    public Slot addSlot2;
+    public Slot minusSlot1;
+    public Slot minusSlot2;
 
     enum MouseActions
     {
@@ -88,18 +91,38 @@ public class MouseDragging : MonoBehaviour
                     case (MouseActions.RmB):
                         if (cannonSlot.currentDie == null)
                         {
-                            if (hit.transform.TryGetComponent(out DieNumber die))
-                            {
                                 hit.transform.position = cannonSlot.transform.position;
                                 draggable.OnEndClick();
-                            }
                         }
                         break;
                     case (MouseActions.ShiftLeft):
                         Debug.Log("Shift Left");
+                        if(addSlot1.currentDie == null)
+                        {
+                            hit.transform.position = addSlot1.transform.position;
+                            draggable.OnEndClick();
+                        } else if(addSlot2.currentDie == null)
+                        {
+                            hit.transform.position = addSlot2.transform.position;
+                            draggable.OnEndClick();
+                        }
+
+                        onMouseUp.Invoke();
                         break;
                     case (MouseActions.ShiftRight):
                         Debug.Log("Shift Right");
+                        if (minusSlot1.currentDie == null)
+                        {
+                            hit.transform.position = minusSlot1.transform.position;
+                            draggable.OnEndClick();
+                        }
+                        else if (minusSlot2.currentDie == null)
+                        {
+                            hit.transform.position = minusSlot2.transform.position;
+                            draggable.OnEndClick();
+                        }
+
+                        onMouseUp.Invoke();
                         break;
                 }
             }

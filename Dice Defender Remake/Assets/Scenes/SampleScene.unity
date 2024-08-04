@@ -1116,6 +1116,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diePrefab: {fileID: 8391447319888400730, guid: 822317094d9964244b2af5c988a05a15, type: 3}
   timerDecrease: 4.5
+--- !u!114 &305510346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180863159346320704, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
+  m_PrefabInstance: {fileID: 179425824}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8e26f62b5104b4bb135e4d40987c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &305701492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,6 +2177,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannonSlot: {fileID: 1369085787}
+  addSlot1: {fileID: 1180469147}
+  addSlot2: {fileID: 797915444}
+  minusSlot1: {fileID: 305510346}
+  minusSlot2: {fileID: 1186954608}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3470,6 +3485,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3180863159346320710, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
   m_PrefabInstance: {fileID: 3180863158301119196}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1180469147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180863159346320704, guid: 9ec3923ff36480a49beb5b747f00632a, type: 3}
+  m_PrefabInstance: {fileID: 3180863158301119196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8e26f62b5104b4bb135e4d40987c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1186954606
 GameObject:
   m_ObjectHideFlags: 0
