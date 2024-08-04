@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MouseDragging : MonoBehaviour
@@ -12,6 +14,17 @@ public class MouseDragging : MonoBehaviour
 
     private bool canSendRaycast;
 
+    public Slot cannonSlot;
+
+
+    enum MouseActions
+    {
+        LmB,
+        RmB,
+        ShiftLeft,
+        ShiftRight
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +36,26 @@ public class MouseDragging : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            SendRaycast();
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                SendRaycast(MouseActions.ShiftLeft);
+            }
+            else
+            {
+                SendRaycast(MouseActions.LmB);
+            }
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                SendRaycast(MouseActions.ShiftRight);
+            }
+            else
+            {
+                SendRaycast(MouseActions.RmB);
+            }
         }
 
         if(Input.GetMouseButtonUp(0))
@@ -32,7 +64,7 @@ public class MouseDragging : MonoBehaviour
         }
     }
 
-    void SendRaycast()
+    void SendRaycast(MouseActions action)
     {
         if(!canSendRaycast)
         {
@@ -44,11 +76,35 @@ public class MouseDragging : MonoBehaviour
 
         if (hit)
         {
-            if(hit.transform.TryGetComponent(out currentlyDraggingObject))
+            if (hit.transform.TryGetComponent(out IDraggable draggable))
             {
-                currentlyDraggingObject.OnClick();
+                switch (action)
+                {
+                    case (MouseActions.LmB):
+                        Debug.Log("Left");
+                        currentlyDraggingObject = draggable;
+                        currentlyDraggingObject.OnClick();
+                        break;
+                    case (MouseActions.RmB):
+                        if (cannonSlot.currentDie == null)
+                        {
+                            if (hit.transform.TryGetComponent(out DieNumber die))
+                            {
+                                hit.transform.position = cannonSlot.transform.position;
+                                draggable.OnEndClick();
+                            }
+                        }
+                        break;
+                    case (MouseActions.ShiftLeft):
+                        Debug.Log("Shift Left");
+                        break;
+                    case (MouseActions.ShiftRight):
+                        Debug.Log("Shift Right");
+                        break;
+                }
             }
         }
+        
     }
 
     void StopDragging()
