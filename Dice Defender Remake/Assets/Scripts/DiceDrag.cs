@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DiceDrag : MonoBehaviour, IDraggable
@@ -8,7 +9,6 @@ public class DiceDrag : MonoBehaviour, IDraggable
     Vector2 mousePos;
     Vector2 dragOffset;
 
-    private HashSet<Slot> slotsInRange = new HashSet<Slot>();
     private Slot currentSlot;
 
     private DieNumber dieNumber;
@@ -49,21 +49,46 @@ public class DiceDrag : MonoBehaviour, IDraggable
     {
         gettingDragged = false;
 
-        Slot[] slots = new Slot[slotsInRange.Count];
-        slotsInRange.CopyTo(slots);
+        if (currentSlot != null)
+        {
+            currentSlot.RemoveDie();
+        }
 
-        if (slotsInRange.Count == 1)
+        currentSlot = null;
+
+        Slot[] slots = GetCloseSlots();
+        Debug.Log(slots.Length);
+        
+
+        if (slots.Length == 1)
         {
 
             currentSlot = slots[0];
             slots[0].AddDie(dieNumber); 
         }
 
-        if(slotsInRange.Count > 1) 
+        if(slots.Length > 1) 
         {
             currentSlot = DetermineClosest(slots);
             currentSlot.AddDie(dieNumber);
         }
+    }
+
+    Slot[] GetCloseSlots()
+    {
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 0.87f);
+        Debug.Log("cols: " + cols.Length);
+        List<Slot> slots = new List<Slot>();
+        foreach (Collider2D col in cols)
+        {
+            if(col.transform.TryGetComponent(out Slot slot))
+            {
+                slots.Add(slot);
+            }
+        }
+        Slot[] ret = new Slot[slots.Count];
+        ret = slots.ToArray();
+        return ret;
     }
 
     Slot DetermineClosest(Slot[] slots)
@@ -82,20 +107,5 @@ public class DiceDrag : MonoBehaviour, IDraggable
         }
 
         return minSlot;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.TryGetComponent(out Slot slot)){
-            slotsInRange.Add(slot);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out Slot slot))
-        {
-            slotsInRange.Remove(slot);
-        }
     }
 }
