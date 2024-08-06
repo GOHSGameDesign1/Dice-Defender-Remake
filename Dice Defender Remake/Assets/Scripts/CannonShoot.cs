@@ -32,10 +32,12 @@ public class CannonShoot : MonoBehaviour
 
     void ShootDie()
     {
-        onShoot.Invoke();
+        onShoot.Invoke(); // Just for VFX Spawn
         GameObject proj = Instantiate(dieProj, cannonSprite.GetChild(0).position, Quaternion.identity);
         proj.GetComponent<ProjectileFunction>().direction = cannonSprite.right;
         proj.GetComponent<DieNumber>().setDieNumber(slot.currentDie.getDieNumber());
+        proj.GetComponent<ProjectileDeath>().SetPowerUps();
+
         slot.DestroyDie();
     }
 }
