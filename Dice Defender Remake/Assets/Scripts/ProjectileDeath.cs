@@ -6,11 +6,18 @@ public class ProjectileDeath : MonoBehaviour
 {
     [SerializeField] private bool canExplode;
 
+    private GameObject explodeEffect;
+
+    private void Awake()
+    {
+        explodeEffect = (GameObject)Resources.Load("Prefabs/Explode Powerup");
+    }
+
     public void Die()
     {
         if (canExplode)
         {
-            Debug.Log("EXPLODE!!!");
+            Instantiate(explodeEffect, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
     }

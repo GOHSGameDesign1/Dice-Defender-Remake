@@ -82,7 +82,7 @@ public class PointsManager : MonoBehaviour
     public void SpawnPointVFX(PointSpawns pointSpawns, Vector2 position)
     {
         int textPoints = findPointValue(pointSpawns);
-        GameObject text = Instantiate(pointPrefab, position, Quaternion.Euler(0, 0, Random.Range(-10f, 10f)));
+        GameObject text = Instantiate(pointPrefab, position, Quaternion.Euler(0, 0, Random.Range(-45f, 45f)));
 
         if(currentCombo > 0)
         {

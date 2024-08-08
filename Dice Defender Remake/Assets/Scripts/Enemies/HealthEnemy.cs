@@ -48,16 +48,6 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
         if(collision.TryGetComponent(out DieNumber die))
         {
             TakeDamage(die.getDieNumber());
-
-            if(health <= 0)
-            {
-                Die();
-            } else
-            {
-                PointsManager.GetInstance().AddPoints(PointsManager.PointSpawns.HealthEnemyHit);
-                PointsManager.GetInstance().SpawnPointVFX(PointsManager.PointSpawns.HealthEnemyHit, transform.position);
-                DiceManager.GetInstance().DecreaseTimer(DiceManager.TimerSpawns.HealthEnemyHit);
-            }
         }
 
         if (collision.TryGetComponent(out ProjectileDeath projectileDeath))
@@ -86,5 +76,16 @@ public class HealthEnemy : MonoBehaviour, ISpawnable
         health -= dmg;
         health = Mathf.Clamp(health, 0, maxHealth);
         m_TextMeshPro.text = health.ToString();
+
+        if (health <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            //PointsManager.GetInstance().AddPoints(PointsManager.PointSpawns.HealthEnemyHit);
+            //PointsManager.GetInstance().SpawnPointVFX(PointsManager.PointSpawns.HealthEnemyHit, transform.position);
+            //DiceManager.GetInstance().DecreaseTimer(DiceManager.TimerSpawns.HealthEnemyHit);
+        }
     }
 }

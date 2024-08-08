@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExplodePowerUp : MonoBehaviour
 {
-    private void OnEnable()
+    private void Awake()
     {
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 1.2f);
         KillColliders(cols);

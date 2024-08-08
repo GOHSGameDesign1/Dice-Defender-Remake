@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2161913995515831278}
   - component: {fileID: 2161913995515831264}
   - component: {fileID: 2161913995515831265}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Health Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 2161913996093847451}
   - component: {fileID: 5414634469708287973}
   - component: {fileID: 7785466705653557939}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Health Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 2161913996589414876}
   - component: {fileID: 6499416229180820975}
   - component: {fileID: 816188165833114590}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Enemy Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2284920456995182399}
   - component: {fileID: 2107381638080525670}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -30,10 +30,7 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
     {
         UpdateManagers();
 
-        if(transform.TryGetComponent(out SplitEnemyLogic split))
-        {
-            split.Split();
-        }
+
 
         Destroy(gameObject);
     }
@@ -72,12 +69,18 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
             if(projDie.getDieNumber() == dieNumber.getDieNumber())
             {
 
-                if(collision.TryGetComponent(out ProjectileDeath projectileDeath))
+                Die();
+
+                if (collision.TryGetComponent(out ProjectileDeath projectileDeath))
                 {
                     projectileDeath.Die();
                 }
 
-                Die();
+                if (transform.TryGetComponent(out SplitEnemyLogic split))
+                {
+                    split.Split();
+                }
+
             } else
             {
                 SpawnTooltipVFX();

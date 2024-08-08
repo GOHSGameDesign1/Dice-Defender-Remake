@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7015596758615160329}
   - component: {fileID: 7194271119646626896}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6983229567673817322}
   - component: {fileID: 2655808456549772505}
   - component: {fileID: 8483213621005361896}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Enemy Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 6983229568747389656}
   - component: {fileID: 6983229568747389654}
   - component: {fileID: 6983229568747389655}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 3876867300306431699}
   - component: {fileID: 1360733189706320773}
   - component: {fileID: 9145055026265848559}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Even_Odd Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

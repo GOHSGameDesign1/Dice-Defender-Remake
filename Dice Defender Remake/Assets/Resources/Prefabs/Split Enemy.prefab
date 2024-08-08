@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7978274298262225460}
   - component: {fileID: 6739921780538007883}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8709546083695611411}
   - component: {fileID: 8709546083695611408}
   - component: {fileID: 7039389420854602235}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Die Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 4347991200156855664}
   - component: {fileID: 1361169928127151802}
   - component: {fileID: 1292531234835574918}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Split Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 8709546085280676993}
   - component: {fileID: 6884434166741535376}
   - component: {fileID: 272368395934793456}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Enemy Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
