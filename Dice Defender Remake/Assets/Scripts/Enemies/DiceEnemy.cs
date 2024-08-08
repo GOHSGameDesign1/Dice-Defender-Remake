@@ -26,9 +26,15 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
         dieNumber.setDieNumber(num);
     }
 
-    protected void Die()
+    public void Die()
     {
         UpdateManagers();
+
+        if(transform.TryGetComponent(out SplitEnemyLogic split))
+        {
+            split.Split();
+        }
+
         Destroy(gameObject);
     }
 

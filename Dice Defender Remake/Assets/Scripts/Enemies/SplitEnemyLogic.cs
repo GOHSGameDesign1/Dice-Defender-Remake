@@ -13,7 +13,7 @@ public class SplitEnemyLogic : MonoBehaviour
         dieEnemyPrefab = (GameObject)Resources.Load("Prefabs/Die Enemy");
     }
 
-    void Split()
+    public void Split()
     {
         int num1 = 0;
         int num2 = 0;
@@ -35,18 +35,6 @@ public class SplitEnemyLogic : MonoBehaviour
         if (spawnedEnemy.TryGetComponent(out DiceEnemy enemy2))
         {
             enemy2.OnSplit(num2);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Projectile")) return;
-        if (collision.TryGetComponent(out DieNumber projDie))
-        {
-            if (projDie.getDieNumber() == dieNumber.getDieNumber())
-            {
-                Split();
-            }
         }
     }
 }
