@@ -10,10 +10,13 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
 
     protected GameObject tooltipVFX;
 
+    private bool goingToDie;
+
     private void Awake()
     {
         dieNumber = GetComponent<DieNumber>();
         tooltipVFX = (GameObject)Resources.Load("Prefabs/Enemy Tooltip VFX");
+        goingToDie = false;
     }
 
     public void OnSpawn()
@@ -28,9 +31,30 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
 
     public void Die()
     {
+        if (goingToDie) return;
+        goingToDie = true;
         UpdateManagers();
 
+        if (transform.TryGetComponent(out SplitEnemyLogic split))
+        {
+            split.Split();
+        }
 
+        Destroy(gameObject);
+    }
+    
+    public void Die(ProjectileDeath proj)
+    {
+        if (goingToDie) return;
+        goingToDie=true;
+        UpdateManagers();
+
+        proj.Die();
+
+        if (transform.TryGetComponent(out SplitEnemyLogic split))
+        {
+            split.Split();
+        }
 
         Destroy(gameObject);
     }
@@ -69,17 +93,12 @@ public class DiceEnemy : MonoBehaviour, ISpawnable
             if(projDie.getDieNumber() == dieNumber.getDieNumber())
             {
 
-                Die();
-
                 if (collision.TryGetComponent(out ProjectileDeath projectileDeath))
                 {
-                    projectileDeath.Die();
+                    Die(projectileDeath);
                 }
 
-                if (transform.TryGetComponent(out SplitEnemyLogic split))
-                {
-                    split.Split();
-                }
+
 
             } else
             {
