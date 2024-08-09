@@ -73,6 +73,11 @@ public class DiceDrag : MonoBehaviour, IDraggable
         }
     }
 
+    public void OnRightClick()
+    {
+        OnEndClick();
+    }
+
     Slot[] GetCloseSlots()
     {
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 0.87f);

@@ -8,6 +8,11 @@ public class PowerUpManager : MonoBehaviour
 
     public bool explodeActive;
 
+    public enum PowerUps
+    {
+        Explode
+    }
+
     private void Awake()
     {
         if(instance == null)
@@ -24,6 +29,26 @@ public class PowerUpManager : MonoBehaviour
     public void RemoveShootPowerUps()
     {
         explodeActive = false;
+    }
+
+    // Returns true if enabling is successful, false if failed
+    public bool TryEnablePowerup(PowerUps powerUp)
+    {
+        switch (powerUp)
+        {
+            case PowerUps.Explode:
+                if (!explodeActive)
+                {
+                    explodeActive=true;
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            default:
+                Debug.LogWarning("Power Up Not Found!");
+                return false;
+        }
     }
 
     // Start is called before the first frame update

@@ -81,47 +81,65 @@ public class MouseDragging : MonoBehaviour
         {
             if (hit.transform.TryGetComponent(out IDraggable draggable))
             {
-                switch (action)
+                if (hit.transform.TryGetComponent(out DieNumber die)) // If its a die...
                 {
-                    case (MouseActions.LmB):
+                    switch (action)
+                    {
+                        case (MouseActions.LmB):
+                            currentlyDraggingObject = draggable;
+                            currentlyDraggingObject.OnClick();
+                            break;
+                        case (MouseActions.RmB):
+                            if (cannonSlot.currentDie == null)
+                            {
+                                hit.transform.position = cannonSlot.transform.position;
+                                draggable.OnEndClick();
+                            }
+                            break;
+                        case (MouseActions.ShiftLeft):
+                            if (addSlot1.currentDie == null)
+                            {
+                                hit.transform.position = addSlot1.transform.position;
+                                draggable.OnEndClick();
+                            }
+                            else if (addSlot2.currentDie == null)
+                            {
+                                hit.transform.position = addSlot2.transform.position;
+                                draggable.OnEndClick();
+                            }
+
+                            onMouseUp.Invoke();
+                            break;
+                        case (MouseActions.ShiftRight):
+                            if (minusSlot1.currentDie == null)
+                            {
+                                hit.transform.position = minusSlot1.transform.position;
+                                draggable.OnEndClick();
+                            }
+                            else if (minusSlot2.currentDie == null)
+                            {
+                                hit.transform.position = minusSlot2.transform.position;
+                                draggable.OnEndClick();
+                            }
+
+                            onMouseUp.Invoke();
+                            break;
+                    }
+                }
+
+                switch (action) // If its a powerup...
+                {
+                    case MouseActions.LmB:
                         currentlyDraggingObject = draggable;
                         currentlyDraggingObject.OnClick();
                         break;
-                    case (MouseActions.RmB):
-                        if (cannonSlot.currentDie == null)
-                        {
-                                hit.transform.position = cannonSlot.transform.position;
-                                draggable.OnEndClick();
-                        }
+                    case MouseActions.RmB:
+                        draggable.OnRightClick();
                         break;
-                    case (MouseActions.ShiftLeft):
-                        if(addSlot1.currentDie == null)
-                        {
-                            hit.transform.position = addSlot1.transform.position;
-                            draggable.OnEndClick();
-                        } else if(addSlot2.currentDie == null)
-                        {
-                            hit.transform.position = addSlot2.transform.position;
-                            draggable.OnEndClick();
-                        }
-
-                        onMouseUp.Invoke();
-                        break;
-                    case (MouseActions.ShiftRight):
-                        if (minusSlot1.currentDie == null)
-                        {
-                            hit.transform.position = minusSlot1.transform.position;
-                            draggable.OnEndClick();
-                        }
-                        else if (minusSlot2.currentDie == null)
-                        {
-                            hit.transform.position = minusSlot2.transform.position;
-                            draggable.OnEndClick();
-                        }
-
-                        onMouseUp.Invoke();
+                    default:
                         break;
                 }
+
             }
         }
         

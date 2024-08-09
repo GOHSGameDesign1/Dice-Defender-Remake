@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8371434345076582798}
   - component: {fileID: 8371434345076582795}
   m_Layer: 7
-  m_Name: Explode Powerup
+  m_Name: Explode Powerup FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

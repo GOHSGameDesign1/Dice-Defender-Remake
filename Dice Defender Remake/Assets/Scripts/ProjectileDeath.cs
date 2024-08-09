@@ -10,7 +10,7 @@ public class ProjectileDeath : MonoBehaviour
 
     private void Awake()
     {
-        explodeEffect = (GameObject)Resources.Load("Prefabs/Explode Powerup");
+        explodeEffect = (GameObject)Resources.Load("Prefabs/Explode Powerup FX");
     }
 
     public void Die()
