@@ -17,4 +17,25 @@ public class EnemyCarryPowerUp : MonoBehaviour
     {
         
     }
+
+    void SpawnPowerUp()
+    {
+        PowerUpManager.GetInstance().SpawnPowerUp(powerup);
+    }
+
+    private void OnEnable()
+    {
+        if (TryGetComponent(out EnemyBase enemy))
+        {
+            enemy.onDeath += SpawnPowerUp;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (TryGetComponent(out EnemyBase enemy))
+        {
+            enemy.onDeath -= SpawnPowerUp;
+        }
+    }
 }
