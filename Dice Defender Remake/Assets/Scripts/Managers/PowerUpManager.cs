@@ -8,10 +8,14 @@ public class PowerUpManager : MonoBehaviour
 
     public bool explodeActive;
 
+    public Transform spawnPoint;
+
     public enum PowerUps
     {
         Explode
     }
+
+    public GameObject[] powerUpOrbs; // Should be in the same order as the powerups enum
 
     private void Awake()
     {
@@ -51,10 +55,23 @@ public class PowerUpManager : MonoBehaviour
         }
     }
 
+    public void SpawnPowerUp(PowerUps powerUp)
+    {
+        if((int)powerUp >= powerUpOrbs.Length || (int)powerUp < 0)
+        {
+            return;
+        }
+        Debug.Log("works");
+        Instantiate(powerUpOrbs[(int)powerUp], (Vector3)Random.insideUnitCircle * 2 + spawnPoint.position, Quaternion.identity);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < 3; i++)
+        {
+            SpawnPowerUp(PowerUps.Explode);
+        }
     }
 
     // Update is called once per frame
