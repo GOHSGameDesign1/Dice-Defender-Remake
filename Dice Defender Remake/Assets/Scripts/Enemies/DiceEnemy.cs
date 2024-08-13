@@ -9,13 +9,10 @@ public class DiceEnemy : EnemyBase, ISpawnable
 
     protected GameObject tooltipVFX;
 
-    //private bool goingToDie;
-
     private void Awake()
     {
         dieNumber = GetComponent<DieNumber>();
         tooltipVFX = (GameObject)Resources.Load("Prefabs/Enemy Tooltip VFX");
-        //goingToDie = false;
     }
 
     public void OnSpawn()
@@ -44,7 +41,6 @@ public class DiceEnemy : EnemyBase, ISpawnable
 
     public override void OnHit(DieNumber projDie, ProjectileDeath projDeath)
     {
-        Debug.Log("Hit");
         if (projDie.getDieNumber() == dieNumber.getDieNumber())
         {
             projDeath.Die();
