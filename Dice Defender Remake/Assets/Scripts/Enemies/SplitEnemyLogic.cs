@@ -37,4 +37,20 @@ public class SplitEnemyLogic : MonoBehaviour
             enemy2.OnSplit(num2);
         }
     }
+
+    private void OnEnable()
+    {
+        if(TryGetComponent(out EnemyBase enemy))
+        {
+            enemy.onDeath += Split;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (TryGetComponent(out EnemyBase enemy))
+        {
+            enemy.onDeath -= Split;
+        }
+    }
 }
