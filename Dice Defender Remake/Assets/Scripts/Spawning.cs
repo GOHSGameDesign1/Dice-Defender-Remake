@@ -45,5 +45,10 @@ public class Spawning : MonoBehaviour
         {
             enemy.OnSpawn();
         }
+
+        if(Random.Range(0f, 1f) < 0.3f)
+        {
+            spawnedEnemy.AddComponent<EnemyCarryPowerUp>();
+        }
     }
 }
