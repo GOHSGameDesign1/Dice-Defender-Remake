@@ -10,6 +10,7 @@ public class EnemyCarryPowerUp : MonoBehaviour
     void SpawnPowerUp()
     {
         PowerUpManager.GetInstance().SpawnPowerUp(powerup);
+        Debug.Log("WOW!!!!!!!!!");
     }
 
     private void Awake()
